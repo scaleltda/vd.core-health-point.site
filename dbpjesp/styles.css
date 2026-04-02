@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #222;
+  line-height: 1.4;
+  font-size: 15px;
+}
+
+/* Header Navbar Styles - EXATAMENTE IGUAL A IMAGEM */
+.top-header {
+  background-color: #A51A19;
+  /* Vermelho escuro igual ao print */
+  width: 100%;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+}
+
+.header-inner .icon-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.header-title {
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Layout Principal */
+.main-container {
+  max-width: 800px;
+  /* Largura focada igual VSls */
+  margin: 0 auto;
+  padding: 25px 20px;
+}
+
+/* Tipografia ajustada conforme pedido */
+.headline {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 20px;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.headline .highlight {
+  color: #9C4122;
+  /* Laranja ferrugem/Marrom */
+}
+
+.sub-headline {
+  font-size: 16px;
+  font-weight: 600;
+  color: #8A0000;
+  /* Vermelho escuro para a subheadline */
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.author-info {
+  font-size: 12px;
+  color: #555555;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.author-info .author-name {
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 1px;
+}
+
+.video-container {
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.video-container vturb-smartplayer {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.visitor-counter {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #d9534f;
+  margin-bottom: 25px;
+}
+
+.as-seen-on {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.as-seen-on img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Comments Section (Fundo invisivel / clean) */
+.comments-section {
+  padding: 20px 0;
+  margin-top: 10px;
+}
+
+.comments-header h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.divider {
+  height: 1px;
+  background-color: #e5e5e5;
+  margin: 15px 0;
+}
+
+.comment {
+  display: flex;
+  margin-bottom: 25px;
+  align-items: flex-start;
+}
+
+.comment .avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.comment-content {
+  background-color: #f1f2f6;
+  padding: 10px 15px;
+  border-radius: 18px;
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+}
+
+.comment-content p strong {
+  color: #365899;
+  font-weight: bold;
+}
+
+.comment-actions {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #365899;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.comment-actions .time {
+  color: #808080;
+}
+
+.comment-likes {
+  position: absolute;
+  bottom: -12px;
+  right: 10px;
+  background-color: #fff;
+  padding: 2px 6px;
+  border-radius: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.comment-likes img {
+  width: 14px;
+  height: 14px;
+  margin-right: -2px;
+  z-index: 1;
+}
+
+.comment-likes img:first-child {
+  z-index: 2;
+}
+
+.comment-likes .likes-count {
+  font-size: 11px;
+  color: #888;
+  margin-left: 6px;
+}
+
+.comment.reply {
+  margin-left: 55px;
+  /* Offset to indent reply */
+  margin-top: -15px;
+  /* Pull it closer to previous comment */
+  margin-bottom: 20px;
+}
+
+.comment.reply .avatar {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.comment.reply .comment-content {
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+.comments-footer {
+  margin-top: 30px;
+  font-size: 13px;
+  color: #666;
+}
+
+.fb-plugin {
+  display: flex;
+  align-items: center;
+  color: #365899;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.fb-plugin img {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+.footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.footer p {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.footer .divider {
+  background-color: #444;
+  margin: 15px auto;
+  max-width: 800px;
+}
+
+.esconder {
+  display: none;
+}
