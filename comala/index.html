@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+  <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+  <link rel="preload" href="https://scripts.converteai.net/7ee76c7b-b701-481f-b973-2b478faae041/ab-test/69798d16fd79f656a5f14559/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+  <link rel="dns-prefetch" href="https://cdn.converteai.net">
+  <link rel="dns-prefetch" href="https://scripts.converteai.net">
+  <link rel="dns-prefetch" href="https://images.converteai.net">
+  <link rel="dns-prefetch" href="https://m3u8.vturb.net">
+  <link rel="dns-prefetch" href="https://api.vturb.com.br">
+	
+	<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioBooster</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    /* 1. RESET E ESTILOS GLOBAIS */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f7f7f7; /* Fundo suave para contraste */
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* 2. TOPO */
+    .top-bar {
+      background: #1f2937;
+      color: #fff;
+      text-align: center;
+      padding: 12px 20px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* 3. VÍDEO */
+    .video-container {
+      padding: 20px;
+    }
+    /* O player já tem max-width: 400px e margin: auto, o que é ótimo. */
+
+    /* 4. CONTADOR DE PESSOAS */
+    .watching-counter {
+      text-align: center;
+      margin: 0 20px 20px 20px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    .watching-counter i {
+      color: #FF0000;
+    }
+
+    /* 5. SEÇÃO DE OFERTAS */
+    .offers {
+      display: none; /* Mantido para o script Vturb */
+      width: 100%;
+      max-width: 1140px; /* Largura máxima para desktop */
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .offers-grid {
+      display: grid;
+      grid-template-columns: 1fr; /* Padrão Mobile: 1 coluna */
+      gap: 24px;
+    }
+    .offer-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 16px;
+      border: 1px solid #e0e0e0;
+    }
+    .offer-header {
+      background: #1f2937;
+      color: #fff;
+      width: calc(100% + 32px); /* Compensa o padding do card */
+      margin-top: -16px; /* Puxa para o topo */
+      padding: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-bottom: 4px solid #009100; /* Detalhe de destaque */
+    }
+    .offer-img {
+      width: 100%;
+      max-width: 180px;
+      height: auto; /* Garante a proporção correta da imagem */
+      margin: 24px auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .price {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #111;
+      line-height: 1;
+    }
+    .price span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #555;
+    }
+    .savings {
+      color: #FF0000;
+      font-weight: 600;
+      margin: 8px 0;
+    }
+    .guarantee {
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+    .offer-total {
+      font-size: 0.9rem;
+      margin: 12px 0;
+    }
+    .btn-offer {
+      background: #009100;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: inline-block;
+      transition: background 0.3s, transform 0.2s;
+      width: 100%;
+      max-width: 300px;
+    }
+    .btn-offer:hover {
+      background: #007800;
+      transform: scale(1.05);
+    }
+    .btn-subtext {
+      display: block;
+      font-size: 0.9rem;
+      margin-top: 8px;
+      color: #333;
+    }
+
+    /* 7. RODAPÉ */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #e9e9e9;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: auto; /* Empurra para o final da página */
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    This presentation is only available until <span id="dynamic-date"></span>
+  </div>
+
+  <div class="video-container">
+    <vturb-smartplayer id="ab-69798d16fd79f656a5f14559" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/7ee76c7b-b701-481f-b973-2b478faae041/ab-test/69798d16fd79f656a5f14559/player.js", s.async=!0,document.head.appendChild(s); </script>
+  </div>
+  
+  <div class="watching-counter">
+    <i class="bi bi-eye-fill"></i>
+    <div><span id="watching-count">410</span> people watching</div>
+  </div>
+
+  <footer>
+    © 2025. All Rights Reserved.
+  </footer>
+
+  <script>
+    // Dynamic date
+    document.addEventListener("DOMContentLoaded", function() {
+      const dateElem = document.getElementById("dynamic-date");
+      const now = new Date();
+      dateElem.textContent = now.toLocaleDateString(navigator.language, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    });
+
+    // People watching random walk
+    (function() {
+      let count = 410;
+      const min = 380;
+      const countElem = document.getElementById("watching-count");
+
+      function updateCount() {
+        const upChance = Math.random();
+        if (upChance < 0.65) {
+          count += Math.floor(Math.random() * 8) + 1; // +1 to +8
+        } else {
+          count -= Math.floor(Math.random() * 3) + 1; // -1 to -3
+        }
+        if (count < min) count = min;
+        countElem.textContent = count;
+
+        const delay = Math.floor(Math.random() * 2000) + 1800; // 1800–3800ms
+        setTimeout(updateCount, delay);
+      }
+
+      updateCount();
+    })();
+  </script>
+
+</body>
+</html>
