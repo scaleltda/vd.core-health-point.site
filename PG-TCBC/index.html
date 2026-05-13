@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Dr. Carlos Jaramillo - Consulta Gratuita | Protocolo Bicarbonato</title>
+  <meta name="description" content="Consulta médica gratuita com o Dr. Carlos Jaramillo. Protocolo natural personalizado para recuperar tu potencia masculina sem efeitos secundários." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
+      box-sizing: border-box;
+    }
+    p, span, h1, h2, h3, h4, h5, h6 {
+      -webkit-user-select: text;
+      user-select: text;
+    }
+    input, select, textarea, button {
+      font-size: 16px !important;
+      -webkit-appearance: none;
+      border-radius: 0;
+      touch-action: manipulation;
+      min-height: 44px;
+    }
+    input:focus, select:focus, textarea:focus, button:focus {
+      outline: none;
+      transform: none !important;
+    }
+    html {
+      height: 100%;
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    body {
+      height: 100%;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+    }
+    button {
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    button:active {
+      transform: scale(0.98);
+      transition: transform 0.1s ease;
+    }
+    img { max-width: 100%; }
+
+    /* Screens */
+    .screen { display: none; }
+    .screen.active { display: flex; }
+
+    /* ===== START SCREEN ===== */
+    #screen-start {
+      min-height: 100dvh;
+      background: #fff;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 24px 40px;
+      animation: fadeIn 0.4s ease;
+    }
+    .start-inner {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .avatar-wrap {
+      position: relative;
+      width: 112px;
+      height: 112px;
+    }
+    .avatar-wrap img {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #2A9D6F;
+    }
+    .avatar-badge {
+      position: absolute;
+      bottom: -4px;
+      right: -4px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #2A9D6F;
+      border: 3px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .avatar-badge svg { width: 14px; height: 14px; stroke: #fff; stroke-width: 3; fill: none; }
+    .avatar-pulse {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #2A9D6F;
+      border: 3px solid #fff;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.3); opacity: 1; }
+    }
+    .doctor-name {
+      text-align: center;
+    }
+    .doctor-name p:first-child {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1A1A1A;
+      margin: 0;
+    }
+    .doctor-name p:first-child span { color: #2A9D6F; }
+    .doctor-name p:last-child {
+      font-size: 14px;
+      color: #888;
+      margin: 4px 0 0;
+    }
+    .start-title {
+      font-size: 22px;
+      line-height: 1.35;
+      color: #1A1A1A;
+      text-align: center;
+      margin: 0;
+    }
+    .start-title strong { font-weight: 800; }
+    .start-desc {
+      font-size: 15px;
+      line-height: 1.65;
+      color: #555;
+      text-align: center;
+      margin: 0;
+    }
+    .start-divider { font-size: 18px; color: #2A9D6F; }
+    .start-badge {
+      font-size: 13px;
+      font-weight: 500;
+      color: #2A9D6F;
+      text-align: center;
+    }
+    .start-cta {
+      width: 100%;
+      padding: 17px 20px;
+      border-radius: 14px;
+      background: #2A9D6F;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 0.2px;
+      min-height: 56px;
+      transition: background 0.2s;
+    }
+    .start-cta:hover { background: #238C5C; }
+
+    /* ===== QUIZ SCREEN ===== */
+    #screen-quiz {
+      background: #fff;
+      height: 100dvh;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .quiz-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-bottom: 1px solid #f3f3f3;
+      flex-shrink: 0;
+    }
+    .quiz-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .back-btn {
+      padding: 8px;
+      margin-left: -8px;
+      color: #9ca3af;
+      background: none;
+      min-height: unset;
+      display: none;
+    }
+    .back-btn.visible { display: flex; align-items: center; }
+    .back-btn svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
+    .quiz-doctor-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .quiz-doctor-info img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #e5e7eb;
+    }
+    .quiz-doctor-label p {
+      margin: 0;
+      line-height: 1.3;
+    }
+    .quiz-doctor-label p:first-child { font-size: 12px; font-weight: 500; color: #1f2937; }
+    .quiz-doctor-label p:last-child { font-size: 12px; color: #9ca3af; }
+    .quiz-progress-text { font-size: 14px; font-weight: 500; color: #6b7280; }
+
+    .progress-bar-wrap {
+      padding: 0 16px;
+      flex-shrink: 0;
+    }
+    .progress-bar-track {
+      width: 100%;
+      height: 6px;
+      background: #f1f5f9;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(to right, #2A9D6F, #38a169);
+      border-radius: 99px;
+      transition: width 0.5s ease;
+    }
+
+    .quiz-milestone {
+      padding: 8px 16px;
+      flex-shrink: 0;
+    }
+    .quiz-milestone-inner {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #065f46;
+      display: none;
+    }
+    .quiz-milestone-inner.visible { display: block; }
+
+    .quiz-body {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 24px 20px 100px;
+    }
+    .question-wrap {
+      max-width: 448px;
+      margin: 0 auto;
+    }
+    /* Feedback popup overlay */
+    .feedback-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(3px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .feedback-overlay.visible {
+      display: flex;
+      animation: fadeIn 0.25s ease;
+    }
+    .feedback-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px 20px 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      cursor: pointer;
+    }
+    .feedback-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #ecfdf5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .feedback-card-body {
+      font-size: 15px;
+      color: #1A1A1A;
+      line-height: 1.65;
+    }
+    .feedback-card-divider {
+      height: 1px;
+      background: #e5e7eb;
+    }
+    .fb-hint {
+      font-size: 13px;
+      font-weight: 600;
+      color: #2A9D6F;
+      text-align: center;
+      opacity: 0;
+      animation: fadeHint 0.4s ease 1.5s forwards;
+    }
+    .feedback-timer-bar {
+      height: 3px;
+      background: #e5e7eb;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .feedback-timer-fill {
+      height: 100%;
+      background: #2A9D6F;
+      border-radius: 99px;
+      width: 100%;
+      transform-origin: left;
+      animation: timerShrink 5.5s linear forwards;
+    }
+    @keyframes timerShrink { from { width: 100%; } to { width: 0%; } }
+    @keyframes fadeHint { to { opacity: 1; } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+    .q-info-badge {
+      font-size: 12px;
+      font-weight: 700;
+      color: #15803d;
+      margin-bottom: 10px;
+    }
+    .q-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.3;
+      margin: 0 0 10px;
+    }
+    .q-subtitle {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.55;
+      margin: 0 0 24px;
+    }
+
+    /* Choice options */
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .option-btn {
+      width: 100%;
+      padding: 16px;
+      text-align: left;
+      border-radius: 12px;
+      border: 2px solid #e5e7eb;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: border-color 0.2s, background 0.2s;
+      min-height: 56px;
+    }
+    .option-btn:hover { border-color: #2A9D6F; background: #f0faf5; }
+    .option-btn.selected { border-color: #2A9D6F; background: #f0faf5; }
+    .option-checkbox {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      border: 2px solid #d1d5db;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .option-btn.selected .option-checkbox,
+    .option-btn.checked .option-checkbox {
+      background: #2A9D6F;
+      border-color: #2A9D6F;
+    }
+    .option-checkbox svg { display: none; width: 14px; height: 14px; stroke: #fff; stroke-width: 3; fill: none; }
+    .option-btn.selected .option-checkbox svg,
+    .option-btn.checked .option-checkbox svg { display: block; }
+    .option-text {
+      font-size: 15px;
+      font-weight: 500;
+      color: #1f2937;
+      line-height: 1.4;
+      flex: 1;
+    }
+    .option-chevron { width: 20px; height: 20px; color: #d1d5db; flex-shrink: 0; }
+    .option-btn.selected .option-chevron { color: #2A9D6F; }
+
+    /* Multi-select submit */
+    .multi-submit-btn {
+      width: 100%;
+      margin-top: 24px;
+      padding: 16px;
+      border-radius: 12px;
+      background: #2A9D6F;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      min-height: 56px;
+      display: none;
+      transition: background 0.2s;
+    }
+    .multi-submit-btn:hover { background: #238C5C; }
+    .multi-submit-btn.visible { display: block; }
+
+    /* Weight/Height slider */
+    .slider-section { text-align: center; }
+    .slider-value {
+      font-size: 60px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+    .slider-unit {
+      font-size: 28px;
+      font-weight: 500;
+      color: #4b5563;
+      margin-left: 8px;
+    }
+    .slider-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .slider-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid #e5e7eb;
+      background: #fff;
+      font-size: 22px;
+      color: #374151;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      min-height: unset;
+    }
+    .slider-btn:hover { border-color: #2A9D6F; color: #2A9D6F; }
+    .slider-input {
+      flex: 1;
+      height: 6px;
+      border-radius: 99px;
+      -webkit-appearance: none;
+      appearance: none;
+      min-height: unset !important;
+      cursor: pointer;
+    }
+    .slider-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #E5B33C;
+      border: 3px solid #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+    .slider-hint {
+      font-size: 12px;
+      color: #9ca3af;
+      text-align: center;
+    }
+    .slider-desc {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.6;
+      text-align: center;
+      margin: 16px 0;
+    }
+    .slider-cta {
+      width: 100%;
+      padding: 16px;
+      background: #f59e0b;
+      color: #111827;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      min-height: 56px;
+      transition: background 0.2s;
+    }
+    .slider-cta:hover { background: #d97706; }
+
+    /* Quiz footer */
+    .quiz-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 30;
+      background: #fff;
+      border-top: 1px solid #f3f4f6;
+      padding: 12px 16px;
+    }
+    .quiz-footer-inner {
+      max-width: 448px;
+      margin: 0 auto;
+    }
+
+    /* ===== MID-QUIZ SCREEN (after Q5) ===== */
+    #screen-midquiz {
+      height: 100dvh;
+      background: #fff;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .midquiz-scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+    .midquiz-inner {
+      width: 100%;
+      max-width: 448px;
+      margin: 0 auto;
+      padding: 32px 20px 160px;
+    }
+    .midquiz-title {
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+    .midquiz-title span {
+      display: block;
+      font-size: clamp(21px, 5.5vw, 27px);
+      font-weight: 800;
+      color: #111827;
+    }
+    .midquiz-green {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .midquiz-green p {
+      font-size: 15px;
+      font-weight: 700;
+      color: #059669;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .midquiz-box {
+      border-radius: 12px;
+      margin-bottom: 20px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-left: 4px solid #ef4444;
+      padding: 18px 16px;
+    }
+    .midquiz-box p {
+      font-size: 14.5px;
+      color: #1f2937;
+      line-height: 1.75;
+      margin: 0 0 12px;
+    }
+    .midquiz-box p:last-child { margin-bottom: 0; }
+    .midquiz-box hr { border: none; border-top: 1px solid #e5e7eb; margin: 14px 0; }
+    .midquiz-box .italic { font-style: italic; color: #374151; font-size: 14px; }
+    .midquiz-box .bold-green { color: #059669; }
+    .midquiz-success-box {
+      border-radius: 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 16px 18px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .midquiz-success-box p:first-child {
+      font-size: 15px;
+      font-weight: 700;
+      color: #065f46;
+      line-height: 1.5;
+      margin: 0 0 8px;
+    }
+    .midquiz-success-box p:last-child {
+      font-size: 13.5px;
+      color: #4b5563;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .midquiz-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: 1px solid #f3f4f6;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.06);
+      padding: 12px 20px;
+    }
+    .midquiz-footer-inner { max-width: 448px; margin: 0 auto; }
+    .midquiz-cta {
+      width: 100%;
+      min-height: 54px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      box-shadow: 0 6px 24px rgba(5,150,105,0.35);
+    }
+
+    /* ===== PROCESSING SCREEN ===== */
+    #screen-processing {
+      min-height: 100dvh;
+      background: linear-gradient(135deg, #f8fafc 0%, #ecfdf5 100%);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+    .proc-inner {
+      max-width: 672px;
+      width: 100%;
+    }
+    .proc-header { text-align: center; margin-bottom: 32px; }
+    .proc-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #d1fae5;
+      color: #065f46;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+    }
+    .proc-title {
+      font-size: clamp(22px, 5vw, 30px);
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0 0 8px;
+    }
+    .proc-subtitle { font-size: 15px; color: #475569; margin: 0; }
+    .proc-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      padding: 24px 32px;
+    }
+    .proc-progress-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #475569;
+      margin-bottom: 8px;
+    }
+    .proc-progress-track {
+      width: 100%;
+      background: #e2e8f0;
+      border-radius: 99px;
+      height: 12px;
+      margin-bottom: 24px;
+    }
+    .proc-progress-fill {
+      height: 100%;
+      background: linear-gradient(to right, #334155, #059669);
+      border-radius: 99px;
+      transition: width 0.5s ease;
+    }
+    .proc-steps { display: flex; flex-direction: column; gap: 16px; }
+    .proc-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px;
+      border-radius: 10px;
+      transition: all 0.3s;
+    }
+    .proc-step.pending { opacity: 0.4; }
+    .proc-step.active { background: #f0fdf4; }
+    .proc-step.done { background: #f8fafc; }
+    .proc-step-icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
+    .proc-step-icon.spin { animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .proc-step-text { font-size: 14px; font-weight: 500; }
+    .proc-step.active .proc-step-text { color: #0f172a; }
+    .proc-step.done .proc-step-text { color: #475569; }
+    .proc-step.pending .proc-step-text { color: #94a3b8; }
+    .proc-obstruction {
+      margin-top: 8px;
+    }
+    .proc-obs-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+    .proc-obs-header span:last-child { font-weight: 700; color: #dc2626; }
+    .proc-obs-track {
+      width: 100%;
+      background: #e2e8f0;
+      border-radius: 99px;
+      height: 8px;
+    }
+    .proc-obs-fill {
+      height: 100%;
+      background: linear-gradient(to right, #f97316, #dc2626);
+      border-radius: 99px;
+      transition: width 0.3s ease;
+    }
+    .proc-note {
+      margin-top: 24px;
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: 14px;
+      color: #92400e;
+      font-weight: 500;
+    }
+    .proc-notification {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      max-width: 320px;
+      background: #fff;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      border-left: 4px solid #059669;
+      padding: 16px;
+      display: none;
+      animation: slideIn 0.3s ease;
+    }
+    .proc-notification.visible { display: block; }
+    @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: none; } }
+    .proc-notif-inner { display: flex; align-items: center; gap: 12px; }
+    .proc-notif-dot { width: 8px; height: 8px; background: #059669; border-radius: 50%; animation: pulse-dot 2s infinite; flex-shrink: 0; }
+    .proc-notif-text p { margin: 0; font-size: 14px; }
+    .proc-notif-text p:first-child { font-weight: 600; color: #1e293b; }
+    .proc-notif-text p:last-child { color: #475569; font-size: 12px; }
+    .proc-privacy { text-align: center; font-size: 14px; color: #64748b; margin-top: 24px; }
+
+    /* Exit intent overlay */
+    .exit-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .exit-overlay.visible { display: flex; animation: fadeIn 0.2s ease; }
+    .exit-card {
+      background: #fff;
+      border-radius: 20px 20px 0 0;
+      padding: 24px;
+      width: 100%;
+      max-width: 440px;
+      box-shadow: 0 -8px 32px rgba(0,0,0,0.15);
+    }
+    .exit-card h3 { font-size: 20px; font-weight: 700; color: #111827; margin: 0 0 8px; }
+    .exit-card p { font-size: 14px; color: #6b7280; margin: 0 0 16px; line-height: 1.6; }
+    .exit-progress { margin-bottom: 16px; }
+    .exit-progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+    .exit-progress-label span:last-child { font-weight: 700; color: #059669; }
+    .exit-progress-track { background: #e5e7eb; border-radius: 99px; height: 8px; }
+    .exit-progress-fill { background: #059669; height: 100%; border-radius: 99px; }
+    .exit-continue-btn {
+      width: 100%;
+      min-height: 52px;
+      border-radius: 12px;
+      background: #2A9D6F;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .exit-continue-btn:hover { background: #238C5C; }
+    .exit-close-btn {
+      width: 100%;
+      background: none;
+      color: #9ca3af;
+      font-size: 14px;
+      min-height: 36px;
+    }
+    .exit-warning {
+      font-size: 12px;
+      color: #dc2626;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== START SCREEN ===== -->
+<div id="screen-start" class="screen active">
+  <div class="start-inner">
+    <div class="avatar-wrap">
+      <img src="images/dr-carlos-jaramillo.jpg" alt="Dr. Carlos Jaramillo" />
+      <div class="avatar-badge">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <div class="avatar-pulse"></div>
+    </div>
+    <div class="doctor-name">
+      <p>Dr. Carlos Jaramillo <span>✓</span></p>
+      <p>150 mil valoraciones · 4.8/5 ⭐</p>
+    </div>
+    <h1 class="start-title">Descubre los 3 ingredientes <strong>del truco del bicarbonato</strong></h1>
+    <p class="start-desc">Recibirás la preparación exacta calibrada para <strong style="color:#1A1A1A">tu peso</strong>, <strong style="color:#1A1A1A">tu edad</strong> y <strong style="color:#1A1A1A">tu nivel de bloqueo</strong>.</p>
+    <p class="start-divider">✦</p>
+    <p class="start-badge">Protocolo personalizado del Dr. Carlos — gratis y confidencial</p>
+    <button class="start-cta" onclick="startQuiz()">RECIBIR MI RECETA →</button>
+    <p style="display:flex;align-items:center;justify-content:center;gap:12px;font-size:12px;color:#888;margin:0">
+      <span>🔒 Solo tú lo verás</span>
+    </p>
+  </div>
+</div>
+
+<!-- ===== QUIZ SCREEN ===== -->
+<div id="screen-quiz" class="screen">
+  <div class="quiz-header">
+    <div class="quiz-header-left">
+      <button class="back-btn" id="back-btn" onclick="goBack()">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <div class="quiz-doctor-info">
+        <img src="images/dr-carlos-jaramillo.jpg" alt="Dr. Carlos" />
+        <div class="quiz-doctor-label">
+          <p>Analizando síntomas</p>
+          <p>Dr. Carlos Jaramillo</p>
+        </div>
+      </div>
+    </div>
+    <span class="quiz-progress-text" id="progress-text">1/10</span>
+  </div>
+
+  <div class="progress-bar-wrap" style="padding: 8px 16px;">
+    <div class="progress-bar-track">
+      <div class="progress-bar-fill" id="progress-fill" style="width: 10%"></div>
+    </div>
+  </div>
+
+  <div class="quiz-milestone" id="milestone-wrap">
+    <div class="quiz-milestone-inner" id="milestone-msg"></div>
+  </div>
+
+  <div class="quiz-body">
+    <div class="question-wrap">
+      <div id="question-content"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FEEDBACK POPUP ===== -->
+<div class="feedback-overlay" id="feedback-overlay" onclick="onFeedbackTap()">
+  <div class="feedback-card">
+    <div style="display:flex;align-items:flex-start;gap:14px">
+      <div class="feedback-card-icon">✅</div>
+      <p class="feedback-card-body" id="feedback-card-body"></p>
+    </div>
+    <div class="feedback-card-divider"></div>
+    <p class="fb-hint" id="fb-hint">Toca para continuar →</p>
+    <div class="feedback-timer-bar">
+      <div class="feedback-timer-fill" id="feedback-timer-fill"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MID-QUIZ SCREEN ===== -->
+<div id="screen-midquiz" class="screen">
+  <div class="midquiz-scroll">
+    <div class="midquiz-inner">
+      <div class="midquiz-title">
+        <span>Lo que Viagra, los suplementos</span>
+        <span>y todo lo demás tienen en común:</span>
+      </div>
+      <div class="midquiz-green">
+        <p>Ninguno toca las placas cristalizadas.</p>
+        <p>Y sin disolver las placas, ninguno puede funcionar.</p>
+      </div>
+      <div class="midquiz-box">
+        <p>Todos los tratamientos convencionales atacan el síntoma — la falta de flujo en el momento.</p>
+        <p>Ninguno ataca la causa — <strong>la obstrucción acumulada durante años</strong> dentro de tus arterias.</p>
+        <hr />
+        <p class="italic">Es como secar el piso mientras el grifo sigue abierto. Puedes secar todo el día. El problema no desaparece hasta que cierras el grifo.</p>
+        <hr />
+        <p><strong>Las placas cristalizadas son el grifo abierto.<br /><span class="bold-green">El protocolo es lo que lo cierra.</span></strong></p>
+      </div>
+      <div class="midquiz-success-box">
+        <p>Por eso nada funcionó antes.<br />Y por eso esto sí va a funcionar.</p>
+        <p>Termina el análisis y recibe el protocolo<br />calibrado exactamente para tu caso.</p>
+      </div>
+    </div>
+  </div>
+  <div class="midquiz-footer">
+    <div class="midquiz-footer-inner">
+      <button class="midquiz-cta" onclick="continueMidquiz()">CONTINUAR MI ANÁLISIS →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROCESSING SCREEN ===== -->
+<div id="screen-processing" class="screen">
+  <div class="proc-inner">
+    <div class="proc-header">
+      <div class="proc-badge">🧪 Procesando Análisis Clínico</div>
+      <h1 class="proc-title">Calculando Tu Protocolo</h1>
+      <p class="proc-subtitle">Por favor espera mientras personalizamos tu tratamiento</p>
+    </div>
+    <div class="proc-card">
+      <div class="proc-progress-header">
+        <span>Progreso</span>
+        <span class="proc-pct" id="proc-pct"><strong>0%</strong></span>
+      </div>
+      <div class="proc-progress-track">
+        <div class="proc-progress-fill" id="proc-fill" style="width: 0%"></div>
+      </div>
+      <div class="proc-steps" id="proc-steps">
+        <div class="proc-step pending" id="step-1">
+          <svg class="proc-step-icon" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+          <span class="proc-step-text">Analizando tu historial de síntomas y tiempo de evolución…</span>
+        </div>
+        <div class="proc-step pending" id="step-2">
+          <svg class="proc-step-icon" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+          <span class="proc-step-text">Calculando nivel de cristalización vascular acumulada…
+            <div class="proc-obstruction" id="proc-obs" style="display:none">
+              <div class="proc-obs-header"><span>Obstrucción estimada</span><span id="obs-pct">0%</span></div>
+              <div class="proc-obs-track"><div class="proc-obs-fill" id="obs-fill" style="width:0%"></div></div>
+            </div>
+          </span>
+        </div>
+        <div class="proc-step pending" id="step-3">
+          <svg class="proc-step-icon" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+          <span class="proc-step-text">Determinando fase de acumulación y calibrando proporciones del Ingrediente 1…</span>
+        </div>
+        <div class="proc-step pending" id="step-4">
+          <svg class="proc-step-icon" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+          <span class="proc-step-text">Ajustando timing de activación entre Ingrediente 2 e Ingrediente 3 para tu índice de masa corporal vascular…</span>
+        </div>
+        <div class="proc-step pending" id="step-5">
+          <svg class="proc-step-icon" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+          <span class="proc-step-text">✅ Protocolo personalizado listo. Tu receta tiene proporciones específicas para tu perfil.</span>
+        </div>
+      </div>
+      <div class="proc-note">
+        📋 Tu receta tiene proporciones específicas para tu perfil. No compartas con otros — es tuya.
+      </div>
+    </div>
+    <p class="proc-privacy">🔒 Tu información está siendo procesada de forma segura y confidencial</p>
+  </div>
+  <div class="proc-notification" id="proc-notif">
+    <div class="proc-notif-inner">
+      <div class="proc-notif-dot"></div>
+      <div class="proc-notif-text">
+        <p id="proc-notif-name">Rodrigo M., 54 años — Ciudad de México</p>
+        <p id="proc-notif-time">Accedió a su protocolo hace 3 min</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== EXIT INTENT OVERLAY ===== -->
+<div class="exit-overlay" id="exit-overlay">
+  <div class="exit-card">
+    <h3>⚠️ Espera — tu análisis ya está al <span id="exit-pct">73</span>% completado.</h3>
+    <p>Si sales ahora, perdemos todos tus datos y tendrías que empezar desde cero.</p>
+    <p class="exit-warning">Tu protocolo personalizado estará listo en menos de 60 segundos.</p>
+    <p style="font-size:13px;color:#6b7280;margin-bottom:12px">Las placas cristalinas no desaparecen solas. Cada día que pasa sin el protocolo, la obstrucción avanza.</p>
+    <div class="exit-progress">
+      <div class="exit-progress-label"><span>Análisis completado</span><span id="exit-pct2">73%</span></div>
+      <div class="exit-progress-track"><div class="exit-progress-fill" id="exit-fill" style="width:73%"></div></div>
+    </div>
+    <button class="exit-continue-btn" onclick="closeExit()">Continuar mi análisis →</button>
+    <button class="exit-close-btn" onclick="closeExit()">Salir de todas formas</button>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+const QUESTIONS = [
+  {
+    id: 1,
+    question: "¿Cuál de estos problemas describe tu situación actual?",
+    subtitle: "Selecciona todo lo que aplica. Esto determina qué fase del protocolo priorizamos para ti.",
+    options: ["Erecciones que se van antes de terminar","Dificultad para lograr la firmeza que tenía antes","Pérdida de tamaño o grosor comparado con años atrás","Menos deseo o energía sexual que antes"],
+    type: "multi-select"
+  },
+  {
+    id: 2,
+    question: "¿Hace cuánto tiempo empezaste a notar que algo había cambiado?",
+    subtitle: "Esto nos ayuda a estimar el nivel de acumulación en tus arterias penianas ⏰",
+    options: ["Menos de 6 meses — empezó de forma gradual","Entre 6 meses y 2 años — fue empeorando poco a poco","Entre 2 y 5 años — ya intenté algunas cosas sin resultado","Más de 5 años — perdí la esperanza de que mejore"],
+    type: "choice"
+  },
+  {
+    id: 3,
+    question: "Cuando el problema ocurre, ¿qué pasa por tu mente en ese momento?",
+    options: ["Vergüenza — siento que le estoy fallando a ella","Miedo — pienso que esto ya no va a mejorar","Frustración — sé que mi cuerpo debería poder responder","Desconexión — me estoy alejando de mi pareja por esto"],
+    type: "choice"
+  },
+  {
+    id: 4,
+    question: "¿Cuántas veces por semana piensas en este problema — aunque no estés en la cama?",
+    subtitle: "El estrés crónico relacionado con esto acelera la acumulación de toxinas vasculares.",
+    options: ["Casi nunca — solo cuando se presenta la situación","Algunas veces — está en el fondo de mi mente","Frecuentemente — me preocupa antes de cada situación íntima","Todo el tiempo — afecta cómo me siento conmigo mismo cada día"],
+    type: "choice"
+  },
+  {
+    id: 5,
+    question: "¿Qué intentaste antes para resolver esto?",
+    subtitle: "Importante: esto nos permite excluir lo que ya no te funcionó y calibrar solo lo que sí puede funcionar para tu caso.",
+    options: ["Nada todavía — es la primera vez que busco una solución","Viagra, Cialis u otras pastillas — funcionaron poco o dejaron de funcionar","Suplementos naturales — probé varios sin resultado consistente","Médicos o tratamientos formales — sin resultados duraderos"],
+    type: "choice"
+  },
+  {
+    id: 6,
+    question: "¿Cuándo fue la última vez que tu cuerpo respondió exactamente como querías?",
+    subtitle: "Esta información calibra la intensidad del primer ingrediente en tu protocolo.",
+    options: ["Hace menos de 1 año — todavía recuerdo cómo era","Entre 1 y 3 años — fue cambiando gradualmente","Entre 3 y 5 años — ya no recuerdo bien cómo era antes","Hace más de 5 años — siento que siempre fue así"],
+    type: "choice"
+  },
+  {
+    id: 7,
+    question: "Una pregunta directa: ¿tu pareja sabe que estás buscando una solución?",
+    subtitle: "Esto nos ayuda a entender el nivel de presión externa que estás manejando.",
+    options: ["Sí — lo hablamos y ella me apoya","Sí — lo sabe pero es un tema tenso entre nosotros","No — no quiero preocuparla o que me juzgue","No tengo pareja actualmente — pero quiero estar preparado"],
+    type: "choice"
+  },
+  {
+    id: 8,
+    question: "¿Cuál es tu edad?",
+    subtitle: "La edad determina qué fase de cristalización vascular es más probable en tu caso y la potencia exacta de cada ingrediente.",
+    options: ["25-35 años","36-50 años","51-65 años","66+ años"],
+    type: "choice"
+  },
+  {
+    id: 9,
+    question: "Último paso antes de tu protocolo: ¿cuánto pesas?",
+    subtitle: "La proporción exacta del primer ingrediente se calcula directamente con tu peso. Un gramo de diferencia puede cambiar el resultado.",
+    options: [],
+    type: "weight"
+  },
+  {
+    id: 10,
+    question: "¿Y cuál es tu estatura?",
+    subtitle: "Con tu peso y estatura calculamos tu índice de masa corporal vascular — el factor final que determina el timing exacto de activación entre el segundo y el tercer ingrediente.",
+    options: [],
+    type: "height"
+  }
+];
+
+const DYNAMIC_RESPONSES = {
+  2: [
+    "Detección temprana. En casos recientes el protocolo actúa más rápido — algunos pacientes notan cambios en los primeros 3 días.",
+    "Este tiempo es suficiente para que las placas se consoliden. Tu protocolo priorizará la disolución en la primera semana.",
+    "Con este tiempo de acumulación, el protocolo de 3 ingredientes sigue siendo altamente efectivo. He tratado casos de hasta 8 años con resultados completos.",
+    "Sé que perdiste la esperanza. Pero la antigüedad de las placas no las hace irremovibles — solo cambia la proporción del primer ingrediente. Tu caso tiene solución."
+  ],
+  3: [
+    "Sentir que le estás fallando a ella es la carga más difícil de cargar. Y es completamente injusta — porque el problema no es tuyo. Es biológico. Y tiene solución.",
+    "Ese miedo es normal después de tanto tiempo sin respuesta. Pero no es irreversible. En 280 pacientes documentados, el 100% recuperó erecciones espontáneas.",
+    "Exactamente. Tu cuerpo SABE cómo responder. Solo hay algo bloqueando el flujo. Cuando lo eliminamos, el cuerpo vuelve a hacer lo que siempre supo hacer.",
+    "El distanciamiento de pareja es una de las consecuencias más dolorosas. Y también una de las primeras cosas que cambia cuando el protocolo empieza a funcionar."
+  ],
+  5: [
+    "Empezar con el protocolo correcto desde el inicio es la ventaja más grande que puedes tener. Sin historial de tratamientos que corregir.",
+    "Las pastillas solo fuerzan el resultado por 4 horas. No tocan las placas cristalinas. Por eso el efecto desaparece — y con el tiempo se vuelven menos efectivas.",
+    "La mayoría de suplementos no funcionan porque usan ingredientes correctos en proporciones equivocadas, o sin la secuencia de activación que activa la enzima de reparación.",
+    "Si los tratamientos formales no dieron resultado, casi siempre es porque atacaron los síntomas, no la causa. Las placas cristalinas son ignoradas por el 91% del sistema médico convencional."
+  ],
+  7: [
+    "Tener su apoyo lo cambia todo. Muchos de mis pacientes que llegaron con apoyo de pareja tuvieron resultados más rápidos — el estrés reducido acelera la recuperación vascular.",
+    "Esa tensión entre los dos es una de las cosas que más duele. El protocolo no solo recupera la función — recupera la dinámica entre ustedes. He visto matrimonios transformarse en semanas.",
+    "Es completamente comprensible. Por eso diseñé esto para que lo puedas resolver solo, desde la privacidad de tu casa, sin tener que explicarle nada a nadie — hasta que los resultados hablen solos.",
+    "El mejor momento para resolver esto es antes de que la situación lo exija. Llegar preparado — con un cuerpo que responde — cambia completamente cómo te relacionas."
+  ]
+};
+
+const MILESTONES = {
+  4: "⚡ Tu perfil vascular se está construyendo",
+  7: "🔥 ¡Casi listo! Solo faltan 3 preguntas para tu protocolo",
+  9: "🎯 Último dato para calibrar tu receta personalizada"
+};
+
+const NOTIFICATIONS = [
+  { name: "Rodrigo M., 54 años — Ciudad de México", time: "3 min" },
+  { name: "Carlos E., 61 años — Guadalajara", time: "7 min" },
+  { name: "Miguel A., 48 años — Monterrey", time: "11 min" },
+  { name: "Jorge L., 58 años — Bogotá", time: "14 min" },
+  { name: "Fernando S., 52 años — Buenos Aires", time: "18 min" }
+];
+
+// ============================================================
+// STATE
+// ============================================================
+let currentQ = 0;
+let answers = [];
+let userProfile = { problemDuration: '', weight: 80, height: 175 };
+let multiSelected = [];
+let midquizShown = false;
+let exitEnabled = false;
+let exitShown = false;
+let feedbackTimer = null;
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function startQuiz() {
+  showScreen('screen-quiz');
+  exitEnabled = false;
+  renderQuestion();
+  setTimeout(() => { exitEnabled = true; }, 3000);
+  setupExitIntent();
+}
+
+function setupExitIntent() {
+  window.addEventListener('beforeunload', handleExit);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && !exitShown && exitEnabled && currentQ >= 2) {
+      exitShown = true;
+      showExitIntent();
+    }
+  });
+}
+
+function showExitIntent() {
+  const pct = Math.round(((currentQ) / QUESTIONS.length) * 100);
+  const exitPct = Math.max(pct, 73);
+  document.getElementById('exit-pct').textContent = exitPct;
+  document.getElementById('exit-pct2').textContent = exitPct + '%';
+  document.getElementById('exit-fill').style.width = exitPct + '%';
+  document.getElementById('exit-overlay').classList.add('visible');
+}
+
+function closeExit() {
+  document.getElementById('exit-overlay').classList.remove('visible');
+  exitShown = false;
+}
+
+function handleExit(e) {
+  if (exitEnabled && currentQ >= 2) {
+    e.preventDefault();
+    e.returnValue = '';
+  }
+}
+
+// ============================================================
+// RENDER QUESTION
+// ============================================================
+function renderQuestion() {
+  const q = QUESTIONS[currentQ];
+  const content = document.getElementById('question-content');
+  const progressText = document.getElementById('progress-text');
+  const progressFill = document.getElementById('progress-fill');
+  const backBtn = document.getElementById('back-btn');
+  const milestoneMsg = document.getElementById('milestone-msg');
+  const milestoneWrap = document.getElementById('milestone-wrap');
+
+  clearFeedbackTimer();
+  hideFeedbackPopup();
+  multiSelected = [];
+
+  // Progress
+  const pct = ((currentQ + 1) / QUESTIONS.length) * 100;
+  progressText.textContent = `${currentQ + 1}/${QUESTIONS.length}`;
+  progressFill.style.width = pct + '%';
+
+  // Back button
+  if (currentQ > 0) {
+    backBtn.classList.add('visible');
+  } else {
+    backBtn.classList.remove('visible');
+  }
+
+  // Milestone
+  if (MILESTONES[q.id]) {
+    milestoneMsg.textContent = MILESTONES[q.id];
+    milestoneMsg.classList.add('visible');
+    milestoneWrap.style.display = 'block';
+  } else {
+    milestoneMsg.classList.remove('visible');
+    milestoneWrap.style.display = 'none';
+  }
+
+  // Render question HTML
+  let html = '';
+  if (q.type === 'weight' || q.type === 'height') {
+    html = renderSlider(q);
+  } else {
+    html = renderChoices(q);
+  }
+  content.innerHTML = html;
+  content.style.animation = 'fadeIn 0.3s ease';
+}
+
+function renderChoices(q) {
+  const isMulti = q.type === 'multi-select';
+  let html = `
+    <p class="q-title">${q.question}</p>
+    ${q.subtitle ? `<p class="q-subtitle">${q.subtitle}</p>` : ''}
+    <div class="options-list" id="options-list">
+  `;
+  q.options.forEach((opt, i) => {
+    html += `
+      <button class="option-btn" onclick="selectOption(${i})" data-index="${i}">
+        <div class="option-checkbox">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <span class="option-text">${opt}</span>
+        ${!isMulti ? `<svg class="option-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>` : ''}
+      </button>
+    `;
+  });
+  html += `</div>`;
+  if (isMulti) {
+    html += `<button class="multi-submit-btn" id="multi-submit" onclick="submitMulti()">Continuar →</button>`;
+  }
+  return html;
+}
+
+function renderSlider(q) {
+  const isWeight = q.type === 'weight';
+  const min = isWeight ? 40 : 100;
+  const max = isWeight ? 150 : 210;
+  const val = isWeight ? 80 : 175;
+  const unit = isWeight ? 'kg' : 'cm';
+  const desc = isWeight
+    ? 'Basándonos en esto, ajustaremos la dosis ideal para obtener los mejores resultados.'
+    : 'Con tu peso y estatura calculamos tu índice de masa corporal vascular — el factor final que determina el timing exacto de activación entre el segundo y el tercer ingrediente.';
+
+  return `
+    <p class="q-title">${q.question}</p>
+    ${q.subtitle ? `<p class="q-subtitle">${q.subtitle}</p>` : ''}
+    <div class="slider-section">
+      <div>
+        <span class="slider-value" id="slider-display">${val}</span><span class="slider-unit">${unit}</span>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn" onclick="adjustSlider(-1)">−</button>
+        <input type="range" class="slider-input" id="slider-input"
+          min="${min}" max="${max}" value="${val}"
+          oninput="updateSlider()"
+          style="background: linear-gradient(to right, #E5B33C 0%, #E5B33C ${((val-min)/(max-min)*100)}%, #E5E7EB ${((val-min)/(max-min)*100)}%, #E5E7EB 100%)"
+        />
+        <button class="slider-btn" onclick="adjustSlider(1)">+</button>
+      </div>
+      <p class="slider-hint">Desliza o usa los botones para ajustar</p>
+      <p class="slider-desc">${desc}</p>
+      <button class="slider-cta" onclick="submitSlider()">Continuar</button>
+    </div>
+  `;
+}
+
+// ============================================================
+// OPTION SELECTION
+// ============================================================
+function selectOption(index) {
+  const q = QUESTIONS[currentQ];
+  const btn = document.querySelector(`[data-index="${index}"]`);
+
+  if (q.type === 'multi-select') {
+    if (multiSelected.includes(index)) {
+      multiSelected = multiSelected.filter(i => i !== index);
+      btn.classList.remove('selected');
+    } else {
+      multiSelected.push(index);
+      btn.classList.add('selected');
+    }
+    const submitBtn = document.getElementById('multi-submit');
+    if (submitBtn) {
+      submitBtn.classList.toggle('visible', multiSelected.length > 0);
+    }
+    return;
+  }
+
+  // Single choice
+  document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+
+  // Save answer
+  if (q.id === 2) userProfile.problemDuration = q.options[index];
+
+  answers.push({ qId: q.id, answer: q.options[index], idx: index });
+
+  // Show feedback popup if this question has a dynamic response
+  const responses = DYNAMIC_RESPONSES[q.id];
+  if (responses && responses[index] !== undefined) {
+    showFeedbackPopup(responses[index]);
+  } else {
+    feedbackTimer = setTimeout(() => nextQuestion(), 600);
+  }
+}
+
+function showFeedbackPopup(text) {
+  const overlay = document.getElementById('feedback-overlay');
+  const body = document.getElementById('feedback-card-body');
+  const hint = document.getElementById('fb-hint');
+  const bar = document.getElementById('feedback-timer-fill');
+
+  body.textContent = text;
+  hint.style.animation = 'none';
+  hint.style.opacity = '0';
+  bar.style.animation = 'none';
+
+  // Force reflow so animations restart cleanly
+  void hint.offsetWidth;
+  void bar.offsetWidth;
+
+  hint.style.animation = 'fadeHint 0.4s ease 1.5s forwards';
+  bar.style.animation = 'timerShrink 5.5s linear forwards';
+
+  overlay.classList.add('visible');
+  feedbackTimer = setTimeout(() => { hideFeedbackPopup(); nextQuestion(); }, 5500);
+}
+
+function hideFeedbackPopup() {
+  document.getElementById('feedback-overlay').classList.remove('visible');
+}
+
+function onFeedbackTap() {
+  clearFeedbackTimer();
+  hideFeedbackPopup();
+  nextQuestion();
+}
+
+function clearFeedbackTimer() {
+  if (feedbackTimer) { clearTimeout(feedbackTimer); feedbackTimer = null; }
+}
+
+function submitMulti() {
+  const q = QUESTIONS[currentQ];
+  const selected = multiSelected.map(i => q.options[i]);
+  answers.push({ qId: q.id, answer: selected, idx: multiSelected });
+  nextQuestion();
+}
+
+function submitSlider() {
+  const input = document.getElementById('slider-input');
+  const val = parseInt(input.value);
+  const q = QUESTIONS[currentQ];
+
+  if (q.type === 'weight') userProfile.weight = val;
+  else userProfile.height = val;
+
+  answers.push({ qId: q.id, answer: val });
+  nextQuestion();
+}
+
+function adjustSlider(delta) {
+  const input = document.getElementById('slider-input');
+  if (!input) return;
+  input.value = Math.max(parseInt(input.min), Math.min(parseInt(input.max), parseInt(input.value) + delta));
+  updateSlider();
+}
+
+function updateSlider() {
+  const input = document.getElementById('slider-input');
+  const display = document.getElementById('slider-display');
+  if (!input || !display) return;
+  const val = parseInt(input.value);
+  const min = parseInt(input.min);
+  const max = parseInt(input.max);
+  const pct = ((val - min) / (max - min)) * 100;
+  display.textContent = val;
+  input.style.background = `linear-gradient(to right, #E5B33C 0%, #E5B33C ${pct}%, #E5E7EB ${pct}%, #E5E7EB 100%)`;
+}
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+function nextQuestion() {
+  clearFeedbackTimer();
+  // After Q5, show mid-quiz screen
+  if (currentQ === 4 && !midquizShown) {
+    midquizShown = true;
+    showScreen('screen-midquiz');
+    return;
+  }
+
+  currentQ++;
+  if (currentQ >= QUESTIONS.length) {
+    showScreen('screen-processing');
+    startProcessing();
+    return;
+  }
+
+  renderQuestion();
+}
+
+function continueMidquiz() {
+  showScreen('screen-quiz');
+  renderQuestion();
+}
+
+function goBack() {
+  if (currentQ > 0) {
+    currentQ--;
+    answers = answers.filter(a => a.qId !== QUESTIONS[currentQ].id);
+    renderQuestion();
+  }
+}
+
+// ============================================================
+// PROCESSING ANIMATION
+// ============================================================
+const PROC_STEPS = [
+  { id: 'step-1', duration: 1500 },
+  { id: 'step-2', duration: 2000 },
+  { id: 'step-3', duration: 1800 },
+  { id: 'step-4', duration: 2000 },
+  { id: 'step-5', duration: 1200 }
+];
+
+function startProcessing() {
+  const totalDuration = PROC_STEPS.reduce((s, st) => s + st.duration, 0);
+  let elapsed = 0;
+  let stepIdx = 0;
+  let obstructionTarget = 72;
+
+  if (userProfile.problemDuration.includes('Más de 5 años')) obstructionTarget = 89;
+  else if (userProfile.problemDuration.includes('2 y 5 años')) obstructionTarget = 78;
+  else if (userProfile.problemDuration.includes('6 meses')) obstructionTarget = 65;
+
+  // Activate first step
+  activateStep(0);
+
+  const interval = setInterval(() => {
+    elapsed += 100;
+    const pct = Math.min((elapsed / totalDuration) * 100, 100);
+    document.getElementById('proc-fill').style.width = pct + '%';
+    document.getElementById('proc-pct').innerHTML = `<strong>${Math.round(pct)}%</strong>`;
+
+    // Obstruction animation for step 2
+    if (stepIdx === 1) {
+      const obsEl = document.getElementById('proc-obs');
+      if (obsEl) {
+        obsEl.style.display = 'block';
+        const obsProgress = Math.min(obstructionTarget, Math.round((elapsed - PROC_STEPS[0].duration) / PROC_STEPS[1].duration * obstructionTarget));
+        document.getElementById('obs-pct').textContent = obsProgress + '%';
+        document.getElementById('obs-fill').style.width = obsProgress + '%';
+      }
+    }
+
+    // Advance steps
+    let cumulative = 0;
+    for (let i = 0; i < PROC_STEPS.length; i++) {
+      cumulative += PROC_STEPS[i].duration;
+      if (elapsed >= cumulative && stepIdx <= i) {
+        completeStep(i);
+        if (i + 1 < PROC_STEPS.length) {
+          stepIdx = i + 1;
+          activateStep(i + 1);
+        }
+      }
+    }
+
+    if (pct >= 100) {
+      clearInterval(interval);
+      setTimeout(() => redirectToResultado(), 500);
+    }
+  }, 100);
+
+  // Notifications
+  let notifIdx = 0;
+  const notifInterval = setInterval(() => {
+    if (notifIdx >= NOTIFICATIONS.length) { clearInterval(notifInterval); return; }
+    showNotification(NOTIFICATIONS[notifIdx]);
+    notifIdx++;
+  }, 5000);
+}
+
+function activateStep(idx) {
+  const el = document.getElementById(PROC_STEPS[idx].id);
+  if (!el) return;
+  el.classList.remove('pending', 'done');
+  el.classList.add('active');
+  const icon = el.querySelector('.proc-step-icon');
+  icon.style.stroke = '#059669';
+  icon.classList.add('spin');
+}
+
+function completeStep(idx) {
+  const el = document.getElementById(PROC_STEPS[idx].id);
+  if (!el) return;
+  el.classList.remove('active', 'pending');
+  el.classList.add('done');
+  const icon = el.querySelector('.proc-step-icon');
+  icon.classList.remove('spin');
+  icon.style.stroke = '#059669';
+  icon.innerHTML = '<polyline points="20 6 9 17 4 12" stroke="#059669" stroke-width="2" fill="none"/>';
+  icon.setAttribute('viewBox', '0 0 24 24');
+}
+
+function showNotification(notif) {
+  const el = document.getElementById('proc-notif');
+  document.getElementById('proc-notif-name').textContent = notif.name;
+  document.getElementById('proc-notif-time').textContent = `Accedió a su protocolo hace ${notif.time}`;
+  el.classList.add('visible');
+  setTimeout(() => el.classList.remove('visible'), 3000);
+}
+
+function redirectToResultado() {
+  exitEnabled = false;
+  window.removeEventListener('beforeunload', handleExit);
+  const params = new URLSearchParams();
+  if (userProfile.problemDuration) params.set('d', encodeURIComponent(userProfile.problemDuration));
+  if (userProfile.weight) params.set('w', userProfile.weight);
+  if (userProfile.height) params.set('h', userProfile.height);
+  const qs = params.toString() ? '?' + params.toString() : '';
+  window.location.href = 'resultado.html' + qs;
+}
+</script>
+
+</body>
+</html>

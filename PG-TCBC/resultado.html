@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+  <link rel="preload" href="https://scripts.converteai.net/7ee76c7b-b701-481f-b973-2b478faae041/ab-test/6a04eff25ecd720a09cf8200/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+  <link rel="dns-prefetch" href="https://cdn.converteai.net">
+  <link rel="dns-prefetch" href="https://scripts.converteai.net">
+  <link rel="dns-prefetch" href="https://images.converteai.net">
+  <link rel="dns-prefetch" href="https://m3u8.vturb.net">
+  <link rel="dns-prefetch" href="https://api.vturb.com.br">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Dr. Carlos Jaramillo - Consulta Gratuita | Protocolo Bicarbonato</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
+    }
+    p, span, h1, h2, h3, h4, h5, h6 {
+      -webkit-user-select: text;
+      user-select: text;
+    }
+    input, select, textarea, button {
+      font-size: 16px !important;
+      -webkit-appearance: none;
+      touch-action: manipulation;
+      min-height: 44px;
+    }
+    html {
+      height: 100%;
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+    }
+    body {
+      height: 100%;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+      background: #fff;
+    }
+
+    /* ── LAYOUT ── */
+    .page {
+      background: #fff;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ROW ── */
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .header-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #e5e7eb;
+      flex-shrink: 0;
+    }
+    .header-diag {
+      font-size: 12px;
+      font-weight: 500;
+      color: #1f2937;
+      margin: 0;
+      line-height: 1.3;
+    }
+    .header-name {
+      font-size: 12px;
+      color: #9ca3af;
+      margin: 0;
+      line-height: 1.3;
+    }
+    .header-badge {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #d1fae5;
+      color: #065f46;
+      white-space: nowrap;
+    }
+
+    /* ── BODY ── */
+    .body {
+      flex: 1;
+      overflow: auto;
+    }
+
+    /* ── TITLE ── */
+    .title-wrap {
+      text-align: center;
+      padding: 24px 16px 16px;
+    }
+    .main-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.3;
+      margin: 0;
+    }
+    .main-title .green {
+      color: #059669;
+    }
+
+    /* ── VIDEO ── */
+    .video-wrap {
+      padding: 0 16px 24px;
+    }
+
+    /* ── COMMENTS ── */
+    .comments-wrap {
+      padding: 0 16px 32px;
+    }
+    .comments-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+      margin: 0 0 8px;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    .comments-list {
+      border-top: 1px solid #f3f4f6;
+    }
+    .comment-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .comment-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .comment-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .comment-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #385898;
+      margin: 0;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    .comment-text {
+      font-size: 14px;
+      color: #1c1e21;
+      margin: 4px 0 0;
+      line-height: 1.5;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    .comment-actions {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 6px;
+      font-size: 12px;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    .comment-action {
+      font-weight: 400;
+      color: #4267b2;
+      cursor: pointer;
+    }
+    .comment-sep {
+      color: #90949c;
+    }
+    .comment-likes-icon {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .comment-likes-count {
+      color: #1c1e21;
+    }
+    .comment-time {
+      color: #90949c;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header-row">
+    <div class="header-left">
+      <img class="header-avatar" src="images/dr-carlos-jaramillo.jpg" alt="Dr. Carlos" />
+      <div>
+        <p class="header-diag">Diagnóstico finalizado</p>
+        <p class="header-name">Dr. Carlos Jaramillo</p>
+      </div>
+    </div>
+    <span class="header-badge">✅ Completo</span>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- TITLE -->
+    <div class="title-wrap">
+      <h1 class="main-title">Mira lo que el <span class="green">Doctor</span> tiene que decir sobre tu diagnóstico</h1>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="video-wrap">
+      <vturb-smartplayer id="ab-6a04eff25ecd720a09cf8200" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/7ee76c7b-b701-481f-b973-2b478faae041/ab-test/6a04eff25ecd720a09cf8200/player.js", s.async=!0,document.head.appendChild(s); </script>
+    </div>
+
+    <!-- COMMENTS -->
+    <div class="comments-wrap">
+      <h2 class="comments-title">Comentarios de Usuarios</h2>
+      <div class="comments-list">
+
+        <div class="comment-row">
+          <img class="comment-avatar" src="images/BvjlMY2004681.jpeg" alt="António García" />
+          <div class="comment-body">
+            <p class="comment-name">António García</p>
+            <p class="comment-text">Honestamente pensé que este tipo de cosas eran una estafa, pero maldita sea... ¡esta cosa realmente funciona! En menos de 1 semana me convertí en un toro en la cama y debo decir que estoy MUY feliz con los resultados. Mi esposa también.</p>
+            <div class="comment-actions">
+              <span class="comment-action">Me gusta</span>
+              <span class="comment-sep">·</span>
+              <span class="comment-action">Responder</span>
+              <span class="comment-sep">·</span>
+              <img src="images/fblike.webp" alt="likes" class="comment-likes-icon" />
+              <span class="comment-likes-count">13</span>
+              <span class="comment-sep">·</span>
+              <span class="comment-time">1 h</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="comment-row">
+          <img class="comment-avatar" src="images/JNjlsy2125287.jpeg" alt="Manuel Rodriguez" />
+          <div class="comment-body">
+            <p class="comment-name">Manuel Rodriguez</p>
+            <p class="comment-text">Hombre, al principio era escéptico, pero después de dos semanas, ¡la diferencia es increíble! Mi confianza se disparó por las nubes y mi chica definitivamente se dio cuenta. ¡Ojalá hubiera encontrado esto antes!</p>
+            <div class="comment-actions">
+              <span class="comment-action">Me gusta</span>
+              <span class="comment-sep">·</span>
+              <span class="comment-action">Responder</span>
+              <span class="comment-sep">·</span>
+              <img src="images/fblike.webp" alt="likes" class="comment-likes-icon" />
+              <span class="comment-likes-count">66</span>
+              <span class="comment-sep">·</span>
+              <span class="comment-time">1 h</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="comment-row">
+          <img class="comment-avatar" src="images/GzPBFI2125287.jpeg" alt="José González" />
+          <div class="comment-body">
+            <p class="comment-name">José González</p>
+            <p class="comment-text">No voy a mentir, estuve inseguro durante años. ¿Ahora? No más ansiedad cuando llega el momento de actuar. Si estás indeciso, inténtalo. Te lo agradecerás más tarde.</p>
+            <div class="comment-actions">
+              <span class="comment-action">Me gusta</span>
+              <span class="comment-sep">·</span>
+              <span class="comment-action">Responder</span>
+              <span class="comment-sep">·</span>
+              <img src="images/fblike.webp" alt="likes" class="comment-likes-icon" />
+              <span class="comment-likes-count">25</span>
+              <span class="comment-sep">·</span>
+              <span class="comment-time">1 h</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="comment-row">
+          <img class="comment-avatar" src="images/ucNgzA2125287.jpeg" alt="Francisco Fernandez" />
+          <div class="comment-body">
+            <p class="comment-name">Francisco Fernandez</p>
+            <p class="comment-text">Estaba a punto de gastar $$$ en algo loco, pero primero le di una oportunidad a esto... me alegro de haberlo hecho. Me tomó algunas semanas, pero mi tamaño y resistencia ahora están en otro nivel. Confianza = 1000%.</p>
+            <div class="comment-actions">
+              <span class="comment-action">Me gusta</span>
+              <span class="comment-sep">·</span>
+              <span class="comment-action">Responder</span>
+              <span class="comment-sep">·</span>
+              <img src="images/fblike.webp" alt="likes" class="comment-likes-icon" />
+              <span class="comment-likes-count">71</span>
+              <span class="comment-sep">·</span>
+              <span class="comment-time">1 h</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="comment-row">
+          <img class="comment-avatar" src="images/xobcBp2206629.jpeg" alt="David Lopez" />
+          <div class="comment-body">
+            <p class="comment-name">David Lopez</p>
+            <p class="comment-text">Nunca pensé que estaría escribiendo algo como esto, pero allá vamos. De hecho, veo la diferencia, y no soy solo yo: mi chica me dijo directamente que ella también lo sentía. ¡Un cambio de juego!</p>
+            <div class="comment-actions">
+              <span class="comment-action">Me gusta</span>
+              <span class="comment-sep">·</span>
+              <span class="comment-action">Responder</span>
+              <span class="comment-sep">·</span>
+              <img src="images/fblike.webp" alt="likes" class="comment-likes-icon" />
+              <span class="comment-likes-count">19</span>
+              <span class="comment-sep">·</span>
+              <span class="comment-time">1 h</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /body -->
+
+</div><!-- /page -->
+
+</body>
+</html>
