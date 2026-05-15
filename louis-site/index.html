@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Louis tem 11 anos. Um domingo de julho de 2025 mudou tudo. Meningoencefalite, tetraplegia, e uma família que não para de lutar. Ajude-nos a ajudá-lo.">
+  <meta property="og:title" content="Louis tem toda uma vida pela frente — ajude-o a vivê-la">
+  <meta property="og:description" content="Um domingo de julho mudou tudo. A história do Louis vai tocar o seu coração. Leia e ajude.">
+  <meta property="og:image" content="images/placeholder-hero.jpg">
+  <title>Louis tem toda uma vida pela frente | Campanha de Apoio à Família</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       CABEÇALHO
+  ════════════════════════════════════════════════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner container">
+      <a class="header-logo" href="#inicio">
+        <span class="logo-text">UNIRAISE</span>
+      </a>
+      <div class="header-actions">
+        <button class="btn-header-donate" onclick="openDonationModal()">
+          Doar agora
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════════ -->
+  <section class="hero-section" id="inicio">
+    <div class="hero-image-wrap" id="heroWrap">
+      <!-- INSERIR FOTO PRINCIPAL DO LOUIS AQUI: salvar o arquivo como images/placeholder-hero.jpg -->
+      <img
+        src="images/placeholder-hero.jpg"
+        alt="Louis"
+        class="hero-img"
+        onerror="this.style.display='none'"
+      >
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="organizer-tag">
+          <div class="organizer-avatar" aria-hidden="true">E</div>
+          <div class="organizer-text">
+            <span class="organizer-label">Organizado por</span>
+            <span class="organizer-name">Emma &middot; Mãe do Louis</span>
+          </div>
+        </div>
+        <h1 class="hero-title">
+          Louis tem toda uma vida pela frente &mdash; e precisa de <strong>você</strong> para vivê-la
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       LAYOUT PRINCIPAL (sidebar + artigo)
+  ════════════════════════════════════════════════ -->
+  <div class="main-container container">
+    <div class="main-layout">
+
+      <!-- ─────────────────────────────
+           SIDEBAR (aparece primeiro no mobile)
+      ────────────────────────────────── -->
+      <aside class="sidebar">
+
+        <!-- Widget: Progresso -->
+        <div class="widget progress-widget">
+          <div class="raised-display">
+            <span class="raised-value" id="raisedValue">€18.440</span>
+            <span class="raised-goal">arrecadados de <strong id="goalValue">€45.000</strong></span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-valuenow="41" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" id="progressFill" data-percent="41"></div>
+          </div>
+          <div class="progress-meta">
+            <div class="meta-item">
+              <strong class="meta-value" id="donorsCount">247</strong>
+              <span class="meta-label">doadores</span>
+            </div>
+            <div class="meta-item">
+              <strong class="meta-value" id="percentValue">41%</strong>
+              <span class="meta-label">da meta atingido</span>
+            </div>
+          </div>
+          <button class="btn-donate btn-donate--primary" onclick="openDonationModal()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+            Quero ajudar o Louis agora
+          </button>
+          <p class="donation-protected">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Doação segura e protegida
+          </p>
+        </div>
+
+        <!-- Widget: Últimos apoiadores -->
+        <div class="widget supporters-widget">
+          <h3 class="widget-title">Últimos apoiadores</h3>
+          <ul class="supporters-list">
+            <li class="supporter-item">
+              <div class="supporter-avatar">M</div>
+              <div class="supporter-info">
+                <strong>Marie L.</strong> doou <span class="supporter-amount">€20</span>
+                <span class="supporter-time">há 3 minutos</span>
+              </div>
+            </li>
+            <li class="supporter-item">
+              <div class="supporter-avatar">P</div>
+              <div class="supporter-info">
+                <strong>Pierre D.</strong> doou <span class="supporter-amount">€50</span>
+                <span class="supporter-time">há 12 minutos</span>
+              </div>
+            </li>
+            <li class="supporter-item">
+              <div class="supporter-avatar supporter-avatar--anon">?</div>
+              <div class="supporter-info">
+                <strong>Anônimo</strong> doou <span class="supporter-amount">€35</span>
+                <span class="supporter-time">há 20 minutos</span>
+              </div>
+            </li>
+            <li class="supporter-item">
+              <div class="supporter-avatar">S</div>
+              <div class="supporter-info">
+                <strong>Sophie M.</strong> doou <span class="supporter-amount">€100</span>
+                <span class="supporter-time">há 31 minutos</span>
+              </div>
+            </li>
+            <li class="supporter-item">
+              <div class="supporter-avatar">J</div>
+              <div class="supporter-info">
+                <strong>Jean-Paul R.</strong> doou <span class="supporter-amount">€10</span>
+                <span class="supporter-time">há 1 hora</span>
+              </div>
+            </li>
+            <li class="supporter-item">
+              <div class="supporter-avatar">I</div>
+              <div class="supporter-info">
+                <strong>Isabelle C.</strong> doou <span class="supporter-amount">€200</span>
+                <span class="supporter-time">há 2 horas</span>
+              </div>
+            </li>
+            <li class="supporter-item">
+              <div class="supporter-avatar">T</div>
+              <div class="supporter-info">
+                <strong>Thomas B.</strong> doou <span class="supporter-amount">€25</span>
+                <span class="supporter-time">há 3 horas</span>
+              </div>
+            </li>
+            <li class="supporter-item">
+              <div class="supporter-avatar supporter-avatar--anon">?</div>
+              <div class="supporter-info">
+                <strong>Anônimo</strong> doou <span class="supporter-amount">€60</span>
+                <span class="supporter-time">há 4 horas</span>
+              </div>
+            </li>
+            <li class="supporter-item">
+              <div class="supporter-avatar">C</div>
+              <div class="supporter-info">
+                <strong>Camille V.</strong> doou <span class="supporter-amount">€50</span>
+                <span class="supporter-time">há 5 horas</span>
+              </div>
+            </li>
+            <li class="supporter-item">
+              <div class="supporter-avatar">F</div>
+              <div class="supporter-info">
+                <strong>François L.</strong> doou <span class="supporter-amount">€30</span>
+                <span class="supporter-time">há 8 horas</span>
+              </div>
+            </li>
+            <li class="supporter-item">
+              <div class="supporter-avatar">N</div>
+              <div class="supporter-info">
+                <strong>Nathalie P.</strong> doou <span class="supporter-amount">€75</span>
+                <span class="supporter-time">há 12 horas</span>
+              </div>
+            </li>
+            <li class="supporter-item">
+              <div class="supporter-avatar">A</div>
+              <div class="supporter-info">
+                <strong>Antoine M.</strong> doou <span class="supporter-amount">€150</span>
+                <span class="supporter-time">ontem</span>
+              </div>
+            </li>
+            <li class="supporter-item">
+              <div class="supporter-avatar">É</div>
+              <div class="supporter-info">
+                <strong>Élise R.</strong> doou <span class="supporter-amount">€50</span>
+                <span class="supporter-time">ontem</span>
+              </div>
+            </li>
+            <li class="supporter-item">
+              <div class="supporter-avatar">N</div>
+              <div class="supporter-info">
+                <strong>Nicolas F.</strong> doou <span class="supporter-amount">€500</span>
+                <span class="supporter-time">há 2 dias</span>
+              </div>
+            </li>
+          </ul>
+          <button class="btn-see-all" onclick="return false">Ver todos os 247 apoiadores</button>
+        </div>
+
+      </aside>
+
+      <!-- ─────────────────────────────
+           ARTIGO / HISTÓRIA
+      ────────────────────────────────── -->
+      <article class="story-article">
+
+        <!-- Introdução -->
+        <div class="story-intro fade-in">
+          <p>Olá, meu nome é <strong>Emma</strong>. Tenho 31 anos, um marido que é meu porto seguro, uma filha de 7 anos chamada Jade — cheia de vida e risadas — e um filho de 11 anos chamado <strong>Louis</strong>.</p>
+          <p>Ou melhor: <em>tinha</em> essa vida. A vida simples e bonita que a gente só percebe o quanto vale quando ela some <strong>num domingo de julho</strong>.</p>
+        </div>
+
+        <hr class="story-divider">
+
+        <!-- Seção 1 -->
+        <section class="story-section fade-in" id="domingo">
+          <h2 class="section-title">O domingo que partiu tudo ao meio</h2>
+          <p>Até o dia <strong>10 de julho de 2025</strong>, Louis era exatamente o que todo menino de 11 anos deveria ser.</p>
+          <p>Praticava esporte. Corria pela casa. Tinha independência, opiniões, planos. Tinha <strong>a vida inteira pela frente</strong> — e ele sabia disso, da forma despreocupada e luminosa que só a infância permite.</p>
+          <p>O que começou como um mal-estar comum — dois dias de vômito, o cansaço típico de uma virose — <strong>transformou-se num abismo em questão de horas.</strong></p>
+          <p>Naquela manhã de domingo, Louis acordou <strong>sem conseguir andar.</strong></p>
+          <p>O corpo que horas antes chutava bola estava a render-se a algo invisível. Algo que ainda hoje <strong>não tem nome.</strong></p>
+        </section>
+
+        <blockquote class="pull-quote fade-in">
+          <p><em>Levei-o ao hospital sem imaginar que aquela seria a última vez que eu o veria de pé.</em></p>
+        </blockquote>
+
+        <hr class="story-divider">
+
+        <!-- Seção 2 -->
+        <section class="story-section fade-in" id="chao">
+          <h2 class="section-title">O momento em que o chão desapareceu</h2>
+          <p>No hospital, a situação escalou com uma velocidade brutal.</p>
+          <p class="text-dramatic">Uma convulsão.</p>
+          <p class="text-dramatic">Depois, uma paragem cardiorrespiratória.</p>
+          <p class="text-highlight"><strong>O coração do meu filho parou.</strong></p>
+          <p>Louis é forte — mais forte do que qualquer palavra pode descrever — e foi estabilizado. Mas o estado dele exigia recursos que o hospital local não tinha. A solução foi imediata e assustadora: <strong>um voo de helicóptero para Bordeaux.</strong></p>
+          <p>Enquanto o meu filho cruzava os céus dentro de uma ambulância aérea, eu e o meu marido cruzávamos o país por estrada. Quatro horas de viagem feitas de silêncio, de lágrimas que não paravam, de orações que não encontravam palavras, <strong>e de um nó no peito que até hoje não se desfez.</strong></p>
+        </section>
+
+        <hr class="story-divider">
+
+        <!-- Seção 3 -->
+        <section class="story-section fade-in" id="inimigo">
+          <h2 class="section-title">O inimigo sem nome</h2>
+          <p>Ao chegarmos ao hospital especializado em cuidados intensivos pediátricos, a gravidade revelou-se por inteiro: <strong>meningoencefalite</strong> — uma inflamação grave no cérebro e nas meninges.</p>
+          <p>Louis, que horas antes brincava, estava agora <strong>em estado convulsivo contínuo.</strong></p>
+          <p>Foram feitos todos os exames imagináveis. Amostras enviadas para os melhores laboratórios de França. Cada hipótese investigada com rigor. <strong>A medicina fez tudo o que a medicina pode fazer.</strong></p>
+          <p><em>Mas a ciência, por vezes, é silenciosa.</em></p>
+          <p>O único rasto encontrado foi o vírus <strong>Influenza B</strong> — uma gripe comum, que em Louis desencadeou uma reação devastadora e ainda inexplicável.</p>
+        </section>
+
+        <blockquote class="pull-quote pull-quote--urgent fade-in">
+          <p><strong>Até hoje, não há um diagnóstico fechado. Não há uma causa. Não há uma resposta.</strong></p>
+          <p class="pull-quote-sub">Só há o Louis. E a batalha de cada dia.</p>
+        </blockquote>
+
+        <!-- ★ BOTÃO DE DOAÇÃO 2 (meio da história) -->
+        <div class="cta-inline fade-in">
+          <button class="btn-donate btn-donate--primary btn-donate--large" onclick="openDonationModal()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+            Quero ajudar o Louis agora
+          </button>
+          <p class="cta-note">Cada contribuição, por menor que pareça, tem um peso imenso para esta família.</p>
+        </div>
+
+        <hr class="story-divider">
+
+        <!-- Seção 4 -->
+        <section class="story-section fade-in" id="realidade">
+          <h2 class="section-title">A nova realidade do nosso menininho</h2>
+          <p>A vida de Louis hoje é irreconhecível — <strong>mas ele continua a ser ele.</strong></p>
+          <p>Onde antes havia correria e barulho, hoje há:</p>
+          <ul class="reality-list">
+            <li class="reality-item">
+              <span class="reality-icon">🫁</span>
+              <div class="reality-text">
+                Um <strong>ventilador</strong> que lhe assegura o sopro da vida, 24 horas por dia
+              </div>
+            </li>
+            <li class="reality-item">
+              <span class="reality-icon">🩺</span>
+              <div class="reality-text">
+                Uma <strong>traqueostomia</strong> que se tornou o seu canal de respiração
+              </div>
+            </li>
+            <li class="reality-item">
+              <span class="reality-icon">🤲</span>
+              <div class="reality-text">
+                Uma <strong>tetraplegia</strong> que o impede de sentir ou mover qualquer coisa do pescoço para baixo
+              </div>
+            </li>
+            <li class="reality-item">
+              <span class="reality-icon">🍼</span>
+              <div class="reality-text">
+                <strong>Alimentação por sonda</strong>, enquanto luta, centímetro a centímetro, em cada sessão de fisioterapia
+              </div>
+            </li>
+          </ul>
+          <p>Louis depende de nós para cada movimento. Para cada respiração. Para cada cuidado.</p>
+          <p>Ele é hoje <strong>o rosto da dependência total.</strong></p>
+          <p>Mas também é <strong>o rosto de um amor que não conhece limites.</strong></p>
+        </section>
+
+        <blockquote class="pull-quote pull-quote--hope fade-in">
+          <p><em>Quando os olhos dele nos encontram — e eles encontram, com uma presença que nenhuma doença conseguiu apagar — eu sei que ele ainda está aqui. Que ele quer continuar. Que ele está lutando.</em></p>
+          <p class="pull-quote-bold"><strong>E nós não podemos parar de lutar com ele.</strong></p>
+        </blockquote>
+
+        <!-- Galeria de Fotos -->
+        <div class="photo-gallery fade-in">
+          <h3 class="gallery-title">O Louis</h3>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <!-- INSERIR FOTO DO LOUIS AQUI: salvar como images/placeholder-foto1.jpg -->
+              <img
+                src="images/placeholder-foto1.jpg"
+                alt="Louis no começo de 2025"
+                class="gallery-img"
+                onerror="this.closest('.gallery-item').classList.add('no-photo'); this.remove();"
+              >
+              <div class="gallery-caption">Louis no começo de 2025</div>
+            </div>
+            <div class="gallery-item">
+              <!-- INSERIR FOTO DO LOUIS AQUI: salvar como images/placeholder-foto2.jpg -->
+              <img
+                src="images/placeholder-foto2.jpg"
+                alt="Louis nos dias de hoje"
+                class="gallery-img"
+                onerror="this.closest('.gallery-item').classList.add('no-photo'); this.remove();"
+              >
+              <div class="gallery-caption">Louis nos dias de hoje</div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="story-divider">
+
+        <!-- Seção 5: Custos -->
+        <section class="story-section fade-in" id="custos">
+          <h2 class="section-title">Por que estamos a pedir ajuda</h2>
+          <p>Esta caminhada — é assim que começámos a chamá-la, porque <strong>recusar o nome de "tragédia" é também uma forma de resistir</strong> — começou naquela unidade de cuidados intensivos e continua hoje, em casa, no hospital, nas salas de fisioterapia e terapia da fala que Louis faz <strong>diariamente.</strong></p>
+          <p>Os custos são reais e pesados:</p>
+          <div class="cost-cards">
+            <div class="cost-card fade-in">
+              <div class="cost-icon">🏥</div>
+              <div class="cost-content">
+                <h4 class="cost-title">Cuidados hospitalares contínuos</h4>
+                <p class="cost-desc">Louis precisa de suporte médico especializado todos os dias</p>
+              </div>
+            </div>
+            <div class="cost-card fade-in">
+              <div class="cost-icon">💊</div>
+              <div class="cost-content">
+                <h4 class="cost-title">Medicamentos e equipamentos</h4>
+                <p class="cost-desc">Sem eles, não há estabilidade</p>
+              </div>
+            </div>
+            <div class="cost-card cost-card--highlight fade-in">
+              <div class="cost-icon">🙌</div>
+              <div class="cost-content">
+                <h4 class="cost-title">Fisioterapia e terapia da fala diárias</h4>
+                <p class="cost-desc"><strong>São hoje a maior esperança de evolução</strong></p>
+              </div>
+            </div>
+            <div class="cost-card fade-in">
+              <div class="cost-icon">🚗</div>
+              <div class="cost-content">
+                <h4 class="cost-title">Carro adaptado</h4>
+                <p class="cost-desc">Para que Louis possa sair com dignidade e segurança</p>
+              </div>
+            </div>
+          </div>
+          <p><strong>Não existe um prognóstico. Não existem respostas fáceis.</strong> Não existe nada além de muita fé, de muito amor, e da certeza de que <strong>este caminho não se faz sozinho.</strong></p>
+        </section>
+
+        <hr class="story-divider">
+
+        <!-- Seção 6: O que pedimos -->
+        <section class="story-section fade-in" id="pedido">
+          <h2 class="section-title">O que pedimos a você</h2>
+          <p>Se a história do Louis te tocou — se em algum momento você pensou <em>"isso poderia acontecer comigo, com o meu filho, num domingo qualquer"</em> — <strong>então você já entendeu tudo.</strong></p>
+          <p>A vida pode mudar num instante. Louis sabe isso. Nós sabemos isso.</p>
+          <p>E é por isso que <strong>cada contribuição, por menor que pareça, tem um peso imenso para nós.</strong></p>
+          <p>Não é só dinheiro.</p>
+        </section>
+
+        <blockquote class="pull-quote pull-quote--final fade-in">
+          <p><strong>É a prova de que Louis não está sozinho. De que há pessoas do outro lado que acreditam que ele tem toda uma vida pela frente.</strong></p>
+          <p class="pull-quote-sub">Porque ele tem.</p>
+        </blockquote>
+
+        <!-- Mensagem final de Emma -->
+        <div class="final-message fade-in">
+          <p><strong>Obrigado, do fundo do coração, por ler até aqui. Por se importar. Por estar com a gente. Pelo seu apoio.</strong></p>
+          <p class="signature">— <em>Emma, mãe do Louis</em> &nbsp;🤍</p>
+        </div>
+
+        <!-- ★ BOTÃO DE DOAÇÃO 3 (final da história) -->
+        <div class="cta-final fade-in">
+          <button class="btn-donate btn-donate--primary btn-donate--large" onclick="openDonationModal()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+            Quero ajudar o Louis agora
+          </button>
+        </div>
+
+      </article>
+
+    </div><!-- fim .main-layout -->
+  </div><!-- fim .main-container -->
+
+  <!-- ═══════════════════════════════════════════
+       COMENTÁRIOS DA COMUNIDADE
+  ════════════════════════════════════════════════ -->
+  <section class="comments-section">
+    <div class="container">
+
+      <div class="comments-header">
+        <h2 class="comments-title">Comentários</h2>
+        <span class="comments-count" id="commentsCount">11 mensagens</span>
+      </div>
+
+      <!-- Lista de comentários existentes -->
+      <div class="comments-list" id="commentsList">
+
+        <div class="comment-card fade-in">
+          <div class="comment-avatar">N</div>
+          <div class="comment-body">
+            <div class="comment-meta">
+              <strong class="comment-name">Nicolas F.</strong>
+              <span class="comment-badge comment-badge--donated">Doou €500</span>
+              <span class="comment-time">há 2 dias</span>
+            </div>
+            <p class="comment-text">Filho da mesma idade. Não consegui terminar de ler sem chorar. Que Deus abençoe esta família. Louis, o mundo está do teu lado.</p>
+          </div>
+        </div>
+
+        <div class="comment-card fade-in">
+          <div class="comment-avatar comment-avatar--anon">?</div>
+          <div class="comment-body">
+            <div class="comment-meta">
+              <strong class="comment-name">Anônimo</strong>
+              <span class="comment-time">há 2 dias</span>
+            </div>
+            <p class="comment-text">Não conheço esta família mas sinto como se conhecesse. Obrigado Emma por ter coragem de partilhar isto.</p>
+          </div>
+        </div>
+
+        <div class="comment-card fade-in">
+          <div class="comment-avatar">I</div>
+          <div class="comment-body">
+            <div class="comment-meta">
+              <strong class="comment-name">Isabelle C.</strong>
+              <span class="comment-badge comment-badge--donated">Doou €200</span>
+              <span class="comment-time">ontem</span>
+            </div>
+            <p class="comment-text">Uma amiga enviou-me este link e não consegui não fazer nada. Doei e partilhei com todos os meus contactos. Que cheguem muitas mais pessoas a esta campanha.</p>
+          </div>
+        </div>
+
+        <div class="comment-card fade-in">
+          <div class="comment-avatar comment-avatar--anon">?</div>
+          <div class="comment-body">
+            <div class="comment-meta">
+              <strong class="comment-name">Anônimo</strong>
+              <span class="comment-badge comment-badge--donated">Doou €60</span>
+              <span class="comment-time">ontem</span>
+            </div>
+            <p class="comment-text">Partilhei com a minha família toda. Esperamos que cada euro conte. Muita força, Louis.</p>
+          </div>
+        </div>
+
+        <div class="comment-card fade-in">
+          <div class="comment-avatar">A</div>
+          <div class="comment-body">
+            <div class="comment-meta">
+              <strong class="comment-name">Antoine M.</strong>
+              <span class="comment-badge comment-badge--donated">Doou €150</span>
+              <span class="comment-time">ontem</span>
+            </div>
+            <p class="comment-text">Não consigo imaginar aquelas 4 horas de estrada, o silêncio, as lágrimas. Força para ti, Emma, e para toda a família.</p>
+          </div>
+        </div>
+
+        <div class="comment-card fade-in">
+          <div class="comment-avatar">S</div>
+          <div class="comment-body">
+            <div class="comment-meta">
+              <strong class="comment-name">Sophie M.</strong>
+              <span class="comment-badge comment-badge--donated">Doou €100</span>
+              <span class="comment-time">há 12 horas</span>
+            </div>
+            <p class="comment-text">Mãe de dois filhos. Esta história ficou comigo durante dias, não consigo deixar de pensar no Louis. Continuem a lutar — nós estamos aqui.</p>
+          </div>
+        </div>
+
+        <div class="comment-card fade-in">
+          <div class="comment-avatar">P</div>
+          <div class="comment-body">
+            <div class="comment-meta">
+              <strong class="comment-name">Pierre D.</strong>
+              <span class="comment-badge comment-badge--donated">Doou €50</span>
+              <span class="comment-time">há 12 minutos</span>
+            </div>
+            <p class="comment-text">A parte do helicóptero... não quero nem imaginar. Muita força pra toda a família.</p>
+          </div>
+        </div>
+
+        <div class="comment-card fade-in">
+          <div class="comment-avatar comment-avatar--anon">?</div>
+          <div class="comment-body">
+            <div class="comment-meta">
+              <strong class="comment-name">Anônimo</strong>
+              <span class="comment-badge comment-badge--donated">Doou €35</span>
+              <span class="comment-time">há 20 minutos</span>
+            </div>
+            <p class="comment-text">Li no trabalho e fiquei sem palavras. Fiz a minha pequena parte. Que o Louis surpreenda todos os médicos.</p>
+          </div>
+        </div>
+
+        <div class="comment-card fade-in">
+          <div class="comment-avatar">R</div>
+          <div class="comment-body">
+            <div class="comment-meta">
+              <strong class="comment-name">Rémi L.</strong>
+              <span class="comment-time">há 2 horas</span>
+            </div>
+            <p class="comment-text">Força Louis. Não te esquecemos.</p>
+          </div>
+        </div>
+
+        <div class="comment-card fade-in">
+          <div class="comment-avatar">L</div>
+          <div class="comment-body">
+            <div class="comment-meta">
+              <strong class="comment-name">Lucie D.</strong>
+              <span class="comment-time">há 6 horas</span>
+            </div>
+            <p class="comment-text">Que história difícil de ler. Muito amor para vocês. Que o Louis continue a surpreender.</p>
+          </div>
+        </div>
+
+        <div class="comment-card fade-in">
+          <div class="comment-avatar comment-avatar--anon">?</div>
+          <div class="comment-body">
+            <div class="comment-meta">
+              <strong class="comment-name">Anônimo</strong>
+              <span class="comment-time">há 1 dia</span>
+            </div>
+            <p class="comment-text">Que milagre aconteça. Acreditamos em ti, Louis.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Formulário de novo comentário -->
+      <div class="comment-form-wrap">
+        <div class="comment-avatar comment-avatar--user">?</div>
+        <div class="comment-form-fields">
+          <input
+            type="text"
+            id="commentName"
+            class="comment-name-input"
+            placeholder="Seu nome (opcional)"
+            maxlength="60"
+          >
+          <textarea
+            id="commentText"
+            class="comment-textarea"
+            placeholder="Escreva uma mensagem de apoio para o Louis e a família..."
+            rows="3"
+            maxlength="500"
+          ></textarea>
+          <div class="comment-form-actions">
+            <span class="comment-anon-note">Se deixar o nome em branco, será publicado como Anônimo</span>
+            <button class="btn-submit-comment" onclick="submitComment()">Enviar mensagem</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       COMPARTILHAMENTO (seção completa)
+  ════════════════════════════════════════════════ -->
+  <section class="share-full-section">
+    <div class="container">
+      <div class="share-full-inner">
+        <div class="share-full-text">
+          <h2 class="share-full-title">Compartilhe — é também ajudar</h2>
+          <p class="share-full-desc">Cada partilha pode chegar a alguém que vai fazer a diferença. Leva apenas 1 minuto.</p>
+        </div>
+        <div class="share-full-buttons">
+          <button class="share-btn share-whatsapp" onclick="return false">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            WhatsApp
+          </button>
+          <button class="share-btn share-facebook" onclick="return false">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </button>
+          <button class="share-btn share-twitter" onclick="return false">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Twitter/X
+          </button>
+          <button class="share-btn share-copy" onclick="return false">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            Copiar link
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       RODAPÉ
+  ════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-tagline">Cada euro conta. Cada partilha importa.<br>Louis está a lutar — e não está sozinho.</p>
+      <button class="btn-donate btn-donate--primary" onclick="openDonationModal()">Fazer uma doação</button>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       CTA FIXO MOBILE (rodapé fixo)
+  ════════════════════════════════════════════════ -->
+  <div class="mobile-cta-bar" id="mobileCta">
+    <div class="mobile-cta-info">
+      <strong>€18.440</strong><br>
+      <span>arrecadados</span>
+    </div>
+    <button class="btn-donate btn-donate--primary mobile-cta-btn" onclick="openDonationModal()">
+      Quero ajudar o Louis
+    </button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       MODAL DE DOAÇÃO — 3 PASSOS
+  ════════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="donationModal" onclick="closeDonationModalOnOverlay(event)">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close-btn" onclick="closeDonationModal()" aria-label="Fechar">&times;</button>
+
+      <!-- ── PASSO 1: Escolher valor ── -->
+      <div id="modalStep1">
+        <div class="modal-header">
+          <div class="modal-heart">🤍</div>
+          <h2 class="modal-title" id="modalTitle">Ajude o Louis</h2>
+          <p class="modal-subtitle">Escolha o valor da sua contribuição</p>
+        </div>
+        <div class="modal-body">
+          <div class="amount-grid">
+            <button class="amount-btn" data-amount="10" onclick="selectAmount(this)">€10</button>
+            <button class="amount-btn" data-amount="20" onclick="selectAmount(this)">€20</button>
+            <button class="amount-btn amount-btn--popular" data-amount="50" onclick="selectAmount(this)">
+              €50
+              <span class="popular-badge">Popular</span>
+            </button>
+            <button class="amount-btn" data-amount="100" onclick="selectAmount(this)">€100</button>
+            <button class="amount-btn" data-amount="200" onclick="selectAmount(this)">€200</button>
+            <button class="amount-btn" data-amount="500" onclick="selectAmount(this)">€500</button>
+          </div>
+          <div class="custom-amount-row">
+            <label class="custom-label" for="customAmountInput">Outro valor:</label>
+            <div class="custom-input-wrap">
+              <span class="currency-symbol">€</span>
+              <input
+                type="number"
+                id="customAmountInput"
+                class="custom-input"
+                placeholder="Ex: 35"
+                min="1"
+                oninput="clearAmountSelection()"
+              >
+            </div>
+          </div>
+          <button class="btn-donate btn-donate--primary btn-donate--full" id="btnProceedDonate" onclick="goToPaymentStep()">
+            Continuar para o pagamento &rarr;
+          </button>
+          <p class="modal-security-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Pagamento seguro &mdash; os seus dados estão protegidos
+          </p>
+        </div>
+      </div>
+
+      <!-- ── PASSO 2: Dados de pagamento ── -->
+      <div id="modalStep2" style="display:none;">
+        <div class="modal-header modal-header--step2">
+          <button class="modal-back-btn" onclick="goBackToStep1()" aria-label="Voltar">&#8592; Voltar</button>
+          <p class="modal-amount-tag" id="modalAmountTag">A doar: <strong>€0</strong></p>
+        </div>
+        <div class="modal-body">
+          <div class="payment-email-row">
+            <label class="custom-label" for="donorEmail">O seu e-mail:</label>
+            <input
+              type="email"
+              id="donorEmail"
+              class="custom-input payment-email-input"
+              placeholder="exemplo@email.com"
+              autocomplete="email"
+            >
+          </div>
+          <div id="stripe-payment-element"></div>
+          <div id="paymentError" class="payment-error-msg" style="display:none;"></div>
+          <button class="btn-donate btn-donate--primary btn-donate--full" id="btnSubmitPayment" onclick="submitPayment()">
+            <span id="btnSubmitText">Confirmar doação</span>
+            <span id="btnSubmitSpinner" class="pay-spinner" style="display:none;"></span>
+          </button>
+          <p class="modal-security-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Pagamento processado em segurança por Stripe
+          </p>
+        </div>
+      </div>
+
+      <!-- ── PASSO 3: Sucesso ── -->
+      <div id="modalStep3" style="display:none;">
+        <div class="modal-body modal-success-body">
+          <div class="success-icon">🎉</div>
+          <h2 class="modal-title">Obrigado!</h2>
+          <p class="modal-subtitle">A sua doação foi confirmada.<br>O Louis e a família agradecem de coração.</p>
+          <button class="btn-donate btn-donate--primary btn-donate--full" onclick="closeDonationModal()">Fechar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
