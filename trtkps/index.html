@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+    <script
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      data-utmify-prevent-xcod-sck
+      data-utmify-prevent-subids
+      data-utmify-ignore-iframe
+      data-utmify-is-cartpanda
+      async
+      defer
+    ></script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wait a moment!</title>
+    <style>
+        /* Estilos Base */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden; /* Evita barra de rolagem lateral por causa do letreiro */
+        }
+
+        /* Faixa Vermelha Superior */
+        .top-header {
+            background-color: #ff0000;
+            padding: 12px 0;
+            width: 100%;
+        }
+
+        .top-header h2 {
+            margin: 0;
+            font-size: 22px;
+            letter-spacing: 1px;
+            font-weight: 900;
+        }
+
+        /* Conteúdo Principal */
+        .main-content {
+            padding: 30px 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .timer-text {
+            color: #ff0000;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .instruction {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #eeeeee;
+        }
+
+        /* Container da Imagem */
+        .image-box {
+            margin-bottom: 30px;
+        }
+
+        .image-box img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        /* BOTÃO PULSANTE */
+        .btn-cta {
+            background-color: #ffc107;
+            color: #000;
+            padding: 18px 25px;
+            font-size: 20px;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 12px;
+            display: inline-block;
+            width: 90%;
+            max-width: 380px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+            /* Chamada da animação */
+            animation: pulsar 0.8s infinite ease-in-out;
+        }
+
+        @keyframes pulsar {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* LETREIRO INFINITO (MARQUEE) */
+        .marquee-container {
+            width: 100%;
+            background-color: #000;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 15px 0;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .marquee-text {
+            display: inline-block;
+            padding-left: 100%; /* Começa fora da tela à direita */
+            animation: rolarTexto 30s linear infinite;
+            color: #ff0000;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        @keyframes rolarTexto {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        a {
+            text-decoration: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-header">
+        <h2>WAIT A MOMENT!</h2>
+    </header>
+
+    <main class="main-content">
+        <div class="timer-text">
+            This presentation will start in <span id="timer">00:30</span>
+        </div>
+        
+        <p class="instruction">Please, confirm your age to watch the presentation...</p>
+
+        <div class="image-box">
+            <a href="https://vd.core-health-point.site/trtkpv/">
+                <img src="images/image1.webp" alt="Video Thumbnail">
+            </a>
+        </div>
+
+        <a href="https://vd.core-health-point.site/trtkpv/">
+            <button class="btn-cta">
+                YES, I'M OVER 40 >>
+            </button>
+        </a>
+    </main>
+
+    <footer class="marquee-container">
+        <div class="marquee-text">
+            Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available &nbsp;•&nbsp; Last spots available
+        </div>
+    </footer>
+
+    <script>
+        // Script do Contador Regressivo
+        let totalSeconds = 30;
+        const display = document.querySelector('#timer');
+
+        function startTimer() {
+            const timerInterval = setInterval(() => {
+                let minutes = Math.floor(totalSeconds / 60);
+                let seconds = totalSeconds % 60;
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--totalSeconds < 0) {
+                    clearInterval(timerInterval);
+                    display.textContent = "00:00";
+                }
+            }, 1000);
+        }
+
+        window.onload = startTimer;
+    </script>
+
+</body>
+</html>
