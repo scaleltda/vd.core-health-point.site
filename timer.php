@@ -1,0 +1,74 @@
+<?php
+// Remove o bloqueio de segurança de iframe do servidor apenas para este arquivo
+header_remove("X-Frame-Options");
+header("Content-Security-Policy: frame-ancestors *");
+?>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            text-align: center;
+        }
+        .digi-countdown-box {
+            width: 100%;
+            font-size: 22px;
+            line-height: 24px;
+            color: black;
+            font-weight: 700;
+            padding: 10px 0;
+        }
+        .countDownTime {
+            color: #DA3421;
+            font-weight: bold;
+        }
+        @media (max-width: 600px) {
+            .digi-countdown-box {
+                font-size: 21px;
+                line-height: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="digi-countdown-box">
+        BESTELLUNG RESERVIERT FÜR <span class="countDownTime">10:00</span>
+    </div>
+
+    <script>
+        (function() {
+            var countDownTime = 10;
+            var countDownDate = new Date().getTime() + (countDownTime * 60 * 1000);
+
+            var x = setInterval(function() {
+                var timerSpan = document.querySelector(".countDownTime");
+                if (!timerSpan) return;
+
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                timerSpan.textContent = minutes + ":" + seconds;
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.body.innerHTML = '<div class="digi-countdown-box" style="color:#DA3421;">Zeit abgelaufen!</div>';
+                }
+            }, 1000);
+        })();
+    </script>
+
+</body>
+</html>
