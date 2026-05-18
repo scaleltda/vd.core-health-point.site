@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 24" width="60" height="24" style="overflow:hidden;">
+  <style>
+    .t {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      fill: #DA3421;
+    }
+    .m2 { animation: m2 600s linear forwards; }
+    .s1 { animation: s1 60s linear 10 forwards; }
+    .s2 { animation: s2 10s linear 60 forwards; }
+    
+    @keyframes m2 {
+      0%, 9.99% { transform: translateY(0px); }
+      10%, 19.99% { transform: translateY(-24px); }
+      20%, 29.99% { transform: translateY(-48px); }
+      30%, 39.99% { transform: translateY(-72px); }
+      40%, 49.99% { transform: translateY(-96px); }
+      50%, 59.99% { transform: translateY(-120px); }
+      60%, 69.99% { transform: translateY(-144px); }
+      70%, 79.99% { transform: translateY(-168px); }
+      80%, 89.99% { transform: translateY(-192px); }
+      90%, 100% { transform: translateY(-216px); }
+    }
+    @keyframes s1 {
+      0%, 16.66% { transform: translateY(0px); }
+      16.67%, 33.33% { transform: translateY(-24px); }
+      33.34%, 50.00% { transform: translateY(-48px); }
+      50.01%, 66.66% { transform: translateY(-72px); }
+      66.67%, 83.33% { transform: translateY(-96px); }
+      83.34%, 100% { transform: translateY(-120px); }
+    }
+    @keyframes s2 {
+      0%, 9.99% { transform: translateY(0px); }
+      10%, 19.99% { transform: translateY(-24px); }
+      20%, 29.99% { transform: translateY(-48px); }
+      30%, 39.99% { transform: translateY(-72px); }
+      40%, 49.99% { transform: translateY(-96px); }
+      50%, 59.99% { transform: translateY(-120px); }
+      60%, 69.99% { transform: translateY(-144px); }
+      70%, 79.99% { transform: translateY(-168px); }
+      80%, 89.99% { transform: translateY(-192px); }
+      90%, 100% { transform: translateY(-216px); }
+    }
+  </style>
+  <g>
+    <text x="0" y="19" class="t">0</text>
+    
+    <g class="m2">
+      <text x="11" y="19" class="t">9</text>
+      <text x="11" y="43" class="t">8</text>
+      <text x="11" y="67" class="t">7</text>
+      <text x="11" y="91" class="t">6</text>
+      <text x="11" y="115" class="t">5</text>
+      <text x="11" y="139" class="t">4</text>
+      <text x="11" y="163" class="t">3</text>
+      <text x="11" y="187" class="t">2</text>
+      <text x="11" y="211" class="t">1</text>
+      <text x="11" y="235" class="t">0</text>
+    </g>
+    
+    <text x="23" y="18" class="t">:</text>
+    
+    <g class="s1">
+      <text x="31" y="19" class="t">5</text>
+      <text x="31" y="43" class="t">4</text>
+      <text x="31" y="67" class="t">3</text>
+      <text x="31" y="91" class="t">2</text>
+      <text x="31" y="115" class="t">1</text>
+      <text x="31" y="139" class="t">0</text>
+    </g>
+    
+    <g class="s2">
+      <text x="43" y="19" class="t">9</text>
+      <text x="43" y="43" class="t">8</text>
+      <text x="43" y="67" class="t">7</text>
+      <text x="43" y="91" class="t">6</text>
+      <text x="43" y="115" class="t">5</text>
+      <text x="43" y="139" class="t">4</text>
+      <text x="43" y="163" class="t">3</text>
+      <text x="43" y="187" class="t">2</text>
+      <text x="43" y="211" class="t">1</text>
+      <text x="43" y="235" class="t">0</text>
+    </g>
+  </g>
+</svg>
