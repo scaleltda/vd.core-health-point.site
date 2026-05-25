@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+  ></script>
+	
+  <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+  <link rel="preload" href="https://scripts.converteai.net/7ee76c7b-b701-481f-b973-2b478faae041/ab-test/6a149fddebb41ab91d756edc/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+  <link rel="dns-prefetch" href="https://cdn.converteai.net">
+  <link rel="dns-prefetch" href="https://scripts.converteai.net">
+  <link rel="dns-prefetch" href="https://images.converteai.net">
+  <link rel="dns-prefetch" href="https://m3u8.vturb.net">
+  <link rel="dns-prefetch" href="https://license.vturb.com">
+
+  <script>var mysrc = "https://tracking.buygoods.com/track/?a=11038&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=pre2,pre3,pre6&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href); if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; } var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s); function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}</script>
+	
+	<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    /* 1. RESET E ESTILOS GLOBAIS */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f7f7f7; /* Fundo suave para contraste */
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* 2. TOPO */
+    .top-bar {
+      background: #64416d;
+      color: #fff;
+      text-align: center;
+      padding: 12px 20px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* 3. VÍDEO */
+    .video-container {
+      padding: 20px;
+    }
+    /* O player já tem max-width: 400px e margin: auto, o que é ótimo. */
+
+    /* 4. CONTADOR DE PESSOAS */
+    .watching-counter {
+      text-align: center;
+      margin: 0 20px 20px 20px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    .watching-counter i {
+      color: #FF0000;
+    }
+
+    /* 5. SEÇÃO DE OFERTAS */
+    .offers {
+      display: none; /* Mantido para o script Vturb */
+      width: 100%;
+      max-width: 1140px; /* Largura máxima para desktop */
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .offers-grid {
+      display: grid;
+      grid-template-columns: 1fr; /* Padrão Mobile: 1 coluna */
+      gap: 24px;
+    }
+    .offer-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 16px;
+      border: 1px solid #e0e0e0;
+    }
+    .offer-header {
+      background: #64416d;
+      color: #fff;
+      width: calc(100% + 32px); /* Compensa o padding do card */
+      margin-top: -16px; /* Puxa para o topo */
+      padding: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-bottom: 4px solid #009100; /* Detalhe de destaque */
+    }
+    .offer-img {
+      width: 100%;
+      max-width: 180px;
+      height: auto; /* Garante a proporção correta da imagem */
+      margin: 24px auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .price {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #111;
+      line-height: 1;
+    }
+    .price span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #555;
+    }
+    .price-old {
+      font-size: 0.9rem; /* Tamanho */
+      color: #9ca3af;    /* Cor cinza para dar aspecto de antigo */
+    }
+    .savings {
+      color: #FF0000;
+      font-weight: 600;
+      margin: 8px 0;
+    }
+    .guarantee {
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+    .offer-total {
+      font-size: 0.9rem;
+      margin: 12px 0;
+    }
+    .btn-offer {
+      background: #009100;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: inline-block;
+      transition: background 0.3s, transform 0.2s;
+      width: 100%;
+      max-width: 300px;
+    }
+    .btn-offer:hover {
+      background: #007800;
+      transform: scale(1.05);
+    }
+    .btn-subtext {
+      display: block;
+      font-size: 0.9rem;
+      margin-top: 8px;
+      color: #333;
+    }
+    
+    /* 5.1. REORDENAÇÃO MÓVEL (CSS ADICIONADO) */
+    /* Define a ordem para telas menores (mobile-first) */
+    #offer-6 { order: 1; } /* 6 potes vem primeiro */
+    #offer-3 { order: 2; } /* 3 potes vem em segundo */
+    #offer-2 { order: 3; } /* 2 potes vem por último */
+
+
+    /* 6. SEÇÃO DE REFERÊNCIAS */
+    .references {
+      width: 100%;
+      max-width: 800px; /* Largura ideal para leitura no desktop */
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .references-content {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        border: 1px solid #e0e0e0;
+        padding: 24px;
+    }
+    .references-content h2 {
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .references-content ol {
+      padding-left: 20px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* 7. RODAPÉ */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #e9e9e9;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: auto; /* Empurra para o final da página */
+    }
+
+    /* 8. MEDIA QUERIES PARA RESPONSIVIDADE */
+    /* Para Tablets e Desktops */
+    @media (min-width: 768px) {
+      .offers-grid {
+        /* Layout flexível: cria colunas de no mínimo 290px */
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      }
+      
+      /* CSS ADICIONADO: Reseta a ordem para o desktop */
+      /* A ordem volta a ser a do código HTML (2, 6, 3) */
+      #offer-6 { order: 0; }
+      #offer-3 { order: 0; }
+      #offer-2 { order: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    This presentation is only available until <span id="dynamic-date"></span>
+  </div>
+
+  <div class="video-container">
+    <vturb-smartplayer id="ab-6a149fddebb41ab91d756edc" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/7ee76c7b-b701-481f-b973-2b478faae041/ab-test/6a149fddebb41ab91d756edc/player.js", s.async=!0,document.head.appendChild(s); </script>
+  </div>
+  
+  <div class="watching-counter">
+    <i class="bi bi-eye-fill"></i>
+    <div><span id="watching-count">410</span> people watching</div>
+  </div>
+
+  <div class="offers hide">
+    <div class="offers-grid">
+
+      <div class="offer-card" id="offer-2">
+        <div class="offer-header">Try Two<br>60 Days, 2 Bottles</div>
+        <img src="img/2bottles.webp" alt="2 Bottles" class="offer-img">
+        <div class="price">$79 <span>per bottle</span></div>
+        <div class="savings">YOU SAVE $200!</div>
+        <div class="guarantee">60 DAYS GUARANTEE</div>
+        <a href="https://buygoods.com/secure/checkout.html?sessid2=sessid2026042712493667&aff_id=21818&sessid2=sessid2026042712493667&aff_id=21818&account_id=11038&product_codename=pre2&redirect=aHR0cHM6Ly9iZy5lbi5wcmVzZ2VyYS5jb20vZmMtZmUxMjMtcHJlczEyLw%3D%3D&aff_id=21818&sub15=v3_7c8cf8b2-8ec3-4552-b323-ab9822b5471e_68fa5537b20c3bbf785bd8ce_0_s-1&vtid=v3_7c8cf8b2-8ec3-4552-b323-ab9822b5471e_68fa5537b20c3bbf785bd8ce_0_s-1" target="_blank" rel="noopener" class="btn-offer">BUY NOW</a>
+        <div class="offer-total">Total: <s class="price-old">$358</s> $158<br>+ 9.90 SHIPPING</div>
+      </div>
+
+      <div class="offer-card" id="offer-6">
+        <div class="offer-header">Best Value!<br>180 Days, 6 Bottles</div>
+        <img src="img/6bottles.webp" alt="6 Bottles" class="offer-img">
+        <div class="price">$49 <span>per bottle</span></div>
+        <div class="savings">YOU SAVE $780!</div>
+        <div class="guarantee">BIGGEST DISCOUNT<br>60 DAYS GUARANTEE</div>
+        <a href="https://buygoods.com/secure/checkout.html?sessid2=sessid2026042712493667&aff_id=21818&sessid2=sessid2026042712493667&aff_id=21818&account_id=11038&product_codename=pre6&redirect=aHR0cHM6Ly9iZy5lbi5wcmVzZ2VyYS5jb20vZmItZmU2LXByZXMtMTIv&aff_id=21818&sub15=v3_7c8cf8b2-8ec3-4552-b323-ab9822b5471e_68fa5537b20c3bbf785bd8ce_5_s-1&vtid=v3_7c8cf8b2-8ec3-4552-b323-ab9822b5471e_68fa5537b20c3bbf785bd8ce_5_s-1" target="_blank" rel="noopener" class="btn-offer">BUY NOW</a>
+        <div class="offer-total">Total: <s class="price-old">$1074</s> $294<br>+ FREE SHIPPING</div>
+      </div>
+
+      <div class="offer-card" id="offer-3">
+        <div class="offer-header">Most Popular<br>90 Days, 3 Bottles</div>
+        <img src="img/3bottles.webp" alt="3 Bottles" class="offer-img">
+        <div class="price">$69 <span>per bottle</span></div>
+        <div class="savings">YOU SAVE $330!</div>
+        <div class="guarantee">60 DAYS GUARANTEE</div>
+        <a href="https://buygoods.com/secure/checkout.html?sessid2=sessid2026042712493667&aff_id=21818&sessid2=sessid2026042712493667&aff_id=21818&account_id=11038&product_codename=pre3&redirect=aHR0cHM6Ly9iZy5lbi5wcmVzZ2VyYS5jb20vZmMtZmUxMjMtcHJlczEyLw%3D%3D&aff_id=21818&sub15=v3_7c8cf8b2-8ec3-4552-b323-ab9822b5471e_68fa5537b20c3bbf785bd8ce_0_s-1&vtid=v3_7c8cf8b2-8ec3-4552-b323-ab9822b5471e_68fa5537b20c3bbf785bd8ce_0_s-1" target="_blank" rel="noopener" class="btn-offer">BUY NOW</a>
+        <div class="offer-total">Total: <s class="price-old">$537</s> $207<br>+ FREE SHIPPING</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="references">
+    <div class="references-content">
+      <h2>Scientific References</h2>
+      <ol>
+        <li>"Natural Compounds and Their Role in Nerve Regeneration and Neuropathy Relief" – Anderson JR, et al. (Journal of Neurology, 2021)</li>
+        <li>"Herbal Supplements and Peripheral Nervous System Health" – Smith RD, et al. (Neurology and Therapy, 2020)</li>
+        <li>"Clinical Studies on Natural Neuropathy Support and Pain Management" – Thompson KL, et al. (International Journal of Nerve Health, 2019)</li>
+        <li>"The Role of Minerals and Antioxidants in Peripheral Nerve Health" – Martinez JR, et al. (Journal of Nutritional Neuroscience, 2020)</li>
+        <li>"Neuropathic Health: Natural Approaches and Clinical Evidence" – Wilson PB, et al. (Neuropathy Health Reviews, 2021)</li>
+        <li>"Botanical Extracts and Nerve Cell Function Optimization" – Chen HW, et al. (Journal of Alternative Neurology, 2019)</li>
+        <li>"Nerve Conduction Levels and Natural Support Methods" – Roberts AL, et al. (Neuroendocrine Research, 2020)</li>
+        <li>"Nerve Vitality: Comprehensive Natural Approaches to Burning and Tingling" – Davis MK, et al. (Journal of Peripheral Nerve Health, 2021)</li>
+        <li>"Natural Compounds for Structural Regeneration of Damaged Nerves" – Thompson RJ, et al. (Integrative Neuroscience Journal, 2020)</li>
+        <li>"Evidence-Based Natural Support for Peripheral Neuropathy Relief" – Anderson BK, et al. (Journal of Complementary Neurology, 2021)</li>
+        <li>"Aging and Peripheral Nerve Regeneration: A Comprehensive Review" – Peterson RJ, et al. (Journal of Aging and Neurological Research, 2021)</li>
+        <li>"Natural Compounds for Myelin Sheath Support: Clinical Evidence" – Thompson BK, et al. (Neurology Research, 2020)</li>
+        <li>"The Impact of Herbal Supplements on Reducing Neuropathic Discomfort" – Roberts M, et al. (Alternative Medicine Review, 2021)</li>
+        <li>"Nerve Pathways Signaling and Natural Alleviation Methods" – Chen YH, et al. (Neurology Today, 2020)</li>
+        <li>"Traditional Botanicals in Neuroprotective Health Support" – Wilson M (Journal of Ethnopharmacology, 2021)</li>
+        <li>"Clinical Applications of Natural Peripheral Nerve Support" – Martinez QY, et al. (Clinical Medicine, 2020)</li>
+        <li>"Targeted Nutrients and Natural Supplements: Synergistic Effects on Neuropathy" – Davis B, et al. (Neuroscience Research, 2021)</li>
+        <li>"Long-term Benefits of Natural Microcirculation and Nerve Support" – Anderson P, et al. (Neurological Science, 2020)</li>
+        <li>"Nutritional Support for Diabetic and Peripheral Nerve Health" – Thompson NB, et al. (Nutrition Research, 2021)</li>
+        <li>"Evidence-Based Approaches to Nerve Protection and Vitality Enhancement" – Roberts K, et al. (Peripheral Nerve Journal, 2020)</li>
+      </ol>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 All Rights Reserved.
+  </footer>
+
+  <script>
+    // Dynamic date
+    document.addEventListener("DOMContentLoaded", function() {
+      const dateElem = document.getElementById("dynamic-date");
+      const now = new Date();
+      dateElem.textContent = now.toLocaleDateString(navigator.language, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    });
+
+    // People watching random walk
+    (function() {
+      let count = 410;
+      const min = 380;
+      const countElem = document.getElementById("watching-count");
+
+      function updateCount() {
+        const upChance = Math.random();
+        if (upChance < 0.65) {
+          count += Math.floor(Math.random() * 8) + 1; // +1 to +8
+        } else {
+          count -= Math.floor(Math.random() * 3) + 1; // -1 to -3
+        }
+        if (count < min) count = min;
+        countElem.textContent = count;
+
+        const delay = Math.floor(Math.random() * 2000) + 1800; // 1800–3800ms
+        setTimeout(updateCount, delay);
+      }
+
+      updateCount();
+    })();
+  </script>
+  
+	<style>
+	  .hide {
+		display: none;
+	  }
+	</style>
+
+<script>
+  var listPitch = {
+    '6a149383d2d773199987bf35': { delay: 2660, utm: 'utm_vsl=vsl1_L1' }
+  };
+
+  var alreadyInitialized = false;
+
+  var updateLinksWithUTM = function(utmParam) {
+    var links = document.querySelectorAll('a[href]:not([href*="#"])');
+    var parts = String(utmParam).split('=');
+    var key = parts[0];
+    var value = parts.slice(1).join('=');
+    for (var i = 0; i < links.length; i++) {
+      var link = links[i];
+      try {
+        var url = new URL(link.href, window.location.href);
+        if (url.searchParams.has(key)) continue;
+        url.searchParams.append(key, value);
+        link.href = url.toString();
+      } catch (e) {
+        var sep = link.href.indexOf('?') === -1 ? '?' : '&';
+        if (link.href.indexOf(utmParam) === -1) {
+          link.href = link.href + sep + utmParam;
+        }
+      }
+    }
+  };
+
+  document.addEventListener('player:ready', function(event) {
+    if (alreadyInitialized) return;
+
+    var detail = event.detail || {};
+    var config = detail.config || {};
+    var player = detail.player || document.querySelector('vturb-smartplayer');
+    var playerId = config.id;
+    var pitchConfig = listPitch[playerId];
+
+    if (!playerId || !pitchConfig) return;
+
+    alreadyInitialized = true;
+
+    player.displayHiddenElements(pitchConfig.delay, ['.hide'], { persist: true });
+    updateLinksWithUTM(pitchConfig.utm);
+  });
+</script>
+
+</body>
+</html>
