@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  async
+  defer
+></script>
+
+<script>
+  window.tikTokPixelId = "6a3ade8b985b9f340931bfd8";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-tiktok.js");
+  document.head.appendChild(a);
+</script>
+	
+  <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+  <link rel="preload" href="https://scripts.converteai.net/7ee76c7b-b701-481f-b973-2b478faae041/players/6a3ac499c118d7ac42d3ea38/v4/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+  <link rel="preload" href="https://cdn.converteai.net/7ee76c7b-b701-481f-b973-2b478faae041/6a3abf96b42077a49649f52c/main.m3u8" as="fetch">
+  <link rel="dns-prefetch" href="https://cdn.converteai.net">
+  <link rel="dns-prefetch" href="https://scripts.converteai.net">
+  <link rel="dns-prefetch" href="https://images.converteai.net">
+  <link rel="dns-prefetch" href="https://license.vturb.com">
+	
+	<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Tailwind necessário para reaproveitar fielmente as classes do design dos pacotes, contador e comentários -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* 1. RESET E ESTILOS GLOBAIS */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f7f7f7; /* Fundo suave para contraste */
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* 2. TOPO */
+    .top-bar {
+      background: #0b1f3a;
+      color: #fff;
+      text-align: center;
+      padding: 12px 20px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* 3. VÍDEO */
+    .video-container {
+      padding: 20px;
+    }
+    /* O player já tem max-width: 400px e margin: auto, o que é ótimo. */
+
+    /* 4. CONTADOR DE PESSOAS */
+    .watching-counter {
+      text-align: center;
+      margin: 0 20px 20px 20px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* 5. SEÇÃO DE PACOTES (design igual ao código anterior, via classes Tailwind) */
+    @keyframes pulse-cta {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 6px 18px rgba(255, 214, 10, 0.45);
+      }
+      50% {
+        transform: scale(1.04);
+        box-shadow: 0 10px 28px rgba(255, 214, 10, 0.7);
+      }
+    }
+    .animate-pulse-cta {
+      animation: pulse-cta 1.6s ease-in-out infinite;
+    }
+
+    /* 7. RODAPÉ */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #e9e9e9;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: auto; /* Empurra para o final da página */
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    This presentation is only available until <span id="dynamic-date"></span>
+  </div>
+
+  <div class="video-container">
+    <vturb-smartplayer id="vid-6a3ac499c118d7ac42d3ea38" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/7ee76c7b-b701-481f-b973-2b478faae041/players/6a3ac499c118d7ac42d3ea38/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+  </div>
+  
+  <div class="watching-counter">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#0b1f3a;flex-shrink:0;" aria-hidden="true">
+      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
+    </svg>
+    <div><span id="watching-count" style="font-weight:700;">927</span> <span style="color:rgba(11,31,58,.7);">People watching now</span></div>
+  </div>
+
+  <section class="hide bg-white py-8 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 md:items-stretch">
+
+      <div id="offer-2" class="relative flex flex-col rounded-lg overflow-hidden border-2 border-[#0b1f3a]/20 shadow-lg bg-white order-3 md:order-1">
+        <div class="text-center pt-7 pb-3 bg-white text-[#0b1f3a] border-b border-gray-200">
+          <h3 class="text-2xl font-extrabold tracking-tight uppercase">2 Bottles</h3>
+          <p class="text-[11px] mt-1 opacity-90 tracking-wide">60 DAY SUPPLY</p>
+        </div>
+        <div class="px-5 pb-5 pt-3 flex flex-col items-center text-center">
+          <img src="img/2bottles.webp" alt="2 Bottles" class="h-48 object-contain my-2" loading="lazy">
+          <div class="flex items-center justify-center gap-1 mt-2">
+            <span class="text-3xl font-extrabold text-[#0b1f3a] leading-none self-center">$</span>
+            <span class="text-6xl font-extrabold text-[#0b1f3a] leading-none tracking-tight">89</span>
+            <span class="text-[11px] font-semibold text-[#0b1f3a]/70 ml-1 leading-[1.05] text-left self-center">PER<br>BOTTLE</span>
+          </div>
+          <p class="mt-3 text-xs font-bold text-[#0b1f3a] tracking-wide flex items-center gap-1.5">
+            <span class="inline-block w-3 h-3 rounded-full bg-[#0b1f3a] text-white text-[8px] flex items-center justify-center">★</span>YOU SAVE: $238
+          </p>
+          <div class="w-full border-t border-gray-200 mt-3 pt-3 space-y-1.5 text-[11px] text-[#0b1f3a]">
+            <p class="flex items-center justify-center gap-1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5" aria-hidden="true">
+                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg> 60 DAYS GUARANTEE
+            </p>
+          </div>
+          <p class="mt-3 text-xs text-black/70">Total <span class="line-through ml-1">$416</span> <span class="font-extrabold text-[#0b1f3a] ml-1">$178</span> <span class="font-semibold">+$9.90 SHIPPING</span></p>
+          <a href="https://buygoods.com/secure/checkout.html?account_id=12639&product_codename=gut2&redirect=aHR0cHM6Ly9ndXRnbHVjb3NlLmNvbS91cHMxLTItYmc=&aff_id=5874" target="_blank" rel="noopener" class="mt-4 w-full rounded-md font-extrabold text-base py-3 tracking-wide shadow-md flex items-center justify-center gap-2 animate-pulse-cta bg-[#0b1f3a] hover:bg-[#0b1f3a]/90 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+              <circle cx="8" cy="21" r="1"></circle>
+              <circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg> BUY NOW
+          </a>
+        </div>
+      </div>
+
+      <div id="offer-6" class="relative flex flex-col rounded-lg overflow-hidden border-2 border-[#FFD60A] shadow-2xl scale-[1.02] bg-white order-1 md:order-2">
+        <div class="absolute -top-0.5 left-1/2 -translate-x-1/2 z-10 bg-[#FFD60A] text-black text-xs font-extrabold tracking-wider px-6 py-1 rounded-b-md">BEST VALUE!</div>
+        <div class="text-center pt-7 pb-3 bg-[#0b1f3a] text-white">
+          <h3 class="text-2xl font-extrabold tracking-tight uppercase">6 Bottles</h3>
+          <p class="text-[11px] mt-1 opacity-90 tracking-wide">180 DAY SUPPLY</p>
+        </div>
+        <div class="px-5 pb-5 pt-3 flex flex-col items-center text-center">
+          <img src="img/6bottles.webp" alt="6 Bottles" class="h-48 object-contain my-2" loading="lazy">
+          <div class="flex items-center justify-center gap-1 mt-2">
+            <span class="text-3xl font-extrabold text-[#0b1f3a] leading-none self-center">$</span>
+            <span class="text-6xl font-extrabold text-[#0b1f3a] leading-none tracking-tight">49</span>
+            <span class="text-[11px] font-semibold text-[#0b1f3a]/70 ml-1 leading-[1.05] text-left self-center">PER<br>BOTTLE</span>
+          </div>
+          <p class="mt-3 text-xs font-bold text-[#0b1f3a] tracking-wide flex items-center gap-1.5">
+            <span class="inline-block w-3 h-3 rounded-full bg-[#0b1f3a] text-white text-[8px] flex items-center justify-center">★</span>YOU SAVE: $894
+          </p>
+          <div class="w-full border-t border-gray-200 mt-3 pt-3 space-y-1.5 text-[11px] text-[#0b1f3a]">
+            <p class="flex items-center justify-center gap-1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5" aria-hidden="true">
+                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg> 60 DAYS GUARANTEE
+            </p>
+            <p class="flex items-center justify-center gap-1.5 font-semibold"><span class="text-[#FFD60A]">★</span> FREE SHIPPING</p>
+          </div>
+          <p class="mt-3 text-xs text-black/70">Total <span class="line-through ml-1">$1188</span> <span class="font-extrabold text-[#0b1f3a] ml-1">$294</span> <span class="font-bold text-[#0b1f3a]">+FREE SHIPPING</span></p>
+          <a href="https://buygoods.com/secure/checkout.html?account_id=12639&product_codename=gut6&redirect=aHR0cHM6Ly9ndXRnbHVjb3NlLmNvbS91cHMxLTYtYmc=&aff_id=5874" target="_blank" rel="noopener" class="mt-4 w-full rounded-md font-extrabold text-base py-3 tracking-wide shadow-md flex items-center justify-center gap-2 animate-pulse-cta bg-[#FFD60A] hover:bg-[#ffc300] text-black">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+              <circle cx="8" cy="21" r="1"></circle>
+              <circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg> BUY NOW
+          </a>
+        </div>
+      </div>
+
+      <div id="offer-3" class="relative flex flex-col rounded-lg overflow-hidden border-2 border-[#0b1f3a]/20 shadow-lg bg-white order-2 md:order-3">
+        <div class="text-center pt-7 pb-3 bg-white text-[#0b1f3a] border-b border-gray-200">
+          <h3 class="text-2xl font-extrabold tracking-tight uppercase">3 Bottles</h3>
+          <p class="text-[11px] mt-1 opacity-90 tracking-wide">90 DAY SUPPLY</p>
+        </div>
+        <div class="px-5 pb-5 pt-3 flex flex-col items-center text-center">
+          <img src="img/3bottles.webp" alt="3 Bottles" class="h-48 object-contain my-2" loading="lazy">
+          <div class="flex items-center justify-center gap-1 mt-2">
+            <span class="text-3xl font-extrabold text-[#0b1f3a] leading-none self-center">$</span>
+            <span class="text-6xl font-extrabold text-[#0b1f3a] leading-none tracking-tight">79</span>
+            <span class="text-[11px] font-semibold text-[#0b1f3a]/70 ml-1 leading-[1.05] text-left self-center">PER<br>BOTTLE</span>
+          </div>
+          <p class="mt-3 text-xs font-bold text-[#0b1f3a] tracking-wide flex items-center gap-1.5">
+            <span class="inline-block w-3 h-3 rounded-full bg-[#0b1f3a] text-white text-[8px] flex items-center justify-center">★</span>YOU SAVE: $327
+          </p>
+          <div class="w-full border-t border-gray-200 mt-3 pt-3 space-y-1.5 text-[11px] text-[#0b1f3a]">
+            <p class="flex items-center justify-center gap-1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5" aria-hidden="true">
+                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg> 60 DAYS GUARANTEE
+            </p>
+            <p class="flex items-center justify-center gap-1.5 font-semibold"><span class="text-[#FFD60A]">★</span> FREE SHIPPING</p>
+          </div>
+          <p class="mt-3 text-xs text-black/70">Total <span class="line-through ml-1">$564</span> <span class="font-extrabold text-[#0b1f3a] ml-1">$237</span> <span class="font-bold text-[#0b1f3a]">+FREE SHIPPING</span></p>
+          <a href="https://buygoods.com/secure/checkout.html?account_id=12639&product_codename=gut3&redirect=aHR0cHM6Ly9ndXRnbHVjb3NlLmNvbS91cHMxLTMtYmc=&aff_id=5874" target="_blank" rel="noopener" class="mt-4 w-full rounded-md font-extrabold text-base py-3 tracking-wide shadow-md flex items-center justify-center gap-2 animate-pulse-cta bg-[#0b1f3a] hover:bg-[#0b1f3a]/90 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+              <circle cx="8" cy="21" r="1"></circle>
+              <circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg> BUY NOW
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bg-white py-10 px-4 text-center">
+    <img src="img/scientific-references.webp" alt="Scientific References" class="mx-auto w-full max-w-xl h-auto" loading="lazy">
+  </section>
+
+  <section class="bg-white py-8 px-4" style="font-family:'Segoe UI Historic','Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;">
+    <div class="max-w-[680px] mx-auto">
+      <div class="flex items-center justify-between border-b border-[#CED0D4] pb-2 mb-3">
+        <div class="text-[15px] font-semibold text-[#050505]">Showing 8 of 552 comments</div>
+        <div class="text-[13px] font-semibold text-[#65676B] flex items-center gap-1">Most relevant
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 11L3 6h10l-5 5z"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="space-y-3">
+
+        <div>
+          <div class="flex gap-2 items-start">
+            <img src="img/meredith.jpg" alt="Meredith Fields" width="40" height="40" loading="lazy" class="shrink-0 w-10 h-10 rounded-full object-cover">
+            <div class="flex-1 min-w-0">
+              <div class="inline-block max-w-full">
+                <div class="bg-[#F0F2F5] rounded-2xl px-3 py-2">
+                  <div class="text-[13px] font-semibold text-[#050505] leading-tight">Meredith Fields</div>
+                  <p class="text-[15px] text-[#050505] mt-0.5 leading-[1.3333] whitespace-pre-wrap break-words">I didn't believe it at first, but after I tried it, I saw real changes. My pain finally started going down again. God bless you!</p>
+                </div>
+              </div>
+              <div class="text-[13px] mt-1.5 ml-3 flex items-center justify-between text-[#65676B]">
+                <div class="flex items-center gap-4">
+                  <button type="button" class="font-semibold hover:underline">Like</button>
+                  <span class="font-semibold">Reply</span><span>3 m</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="text-[13px] text-[#65676B]">39</span>
+                  <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1a)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1b)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1c)" fill-opacity=".5"></path>
+                    <path d="M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z" fill="#fff"></path>
+                    <defs>
+                      <radialGradient id="fbL1b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 .0005 8) scale(7.99958)">
+                        <stop offset=".5618" stop-color="#0866FF" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#0866FF" stop-opacity=".1"></stop>
+                      </radialGradient>
+                      <radialGradient id="fbL1c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5257 10.9237) scale(10.1818)">
+                        <stop offset=".3143" stop-color="#02ADFC"></stop>
+                        <stop offset="1" stop-color="#02ADFC" stop-opacity="0"></stop>
+                      </radialGradient>
+                      <linearGradient id="fbL1a" x1="2.3989" y1="2.3999" x2="13.5983" y2="13.5993" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#02ADFC"></stop>
+                        <stop offset=".5" stop-color="#0866FF"></stop>
+                        <stop offset="1" stop-color="#2B7EFF"></stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+              <div class="mt-2 space-y-2">
+                <div class="flex gap-2 items-start">
+                  <img src="img/jennifer.jpg" alt="Jennifer Taylor" width="32" height="32" loading="lazy" class="shrink-0 w-8 h-8 rounded-full object-cover">
+                  <div class="flex-1 min-w-0">
+                    <div class="inline-block max-w-full">
+                      <div class="bg-[#F0F2F5] rounded-2xl px-3 py-2">
+                        <div class="text-[13px] font-semibold text-[#050505] leading-tight">Jennifer Taylor</div>
+                        <p class="text-[15px] text-[#050505] mt-0.5 leading-[1.3333] whitespace-pre-wrap break-words">I'm so glad I watched this till the end. Super happy!!! Thank you!! As I got older, my pain kept getting worse...... But after trying this method, my nights are more peaceful now and I feel like I have my life back. 🙏</p>
+                      </div>
+                    </div>
+                    <div class="text-[13px] mt-1.5 ml-3 flex items-center justify-between text-[#65676B]">
+                      <div class="flex items-center gap-4">
+                        <button type="button" class="font-semibold hover:underline">Like</button>
+                        <span class="font-semibold">Reply</span><span>1 h</span>
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <span class="text-[13px] text-[#65676B]">17</span>
+                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                          <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL2a)"></path>
+                          <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL2b)"></path>
+                          <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL2c)" fill-opacity=".5"></path>
+                          <path d="M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z" fill="#fff"></path>
+                          <defs>
+                            <radialGradient id="fbL2b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 .0005 8) scale(7.99958)">
+                              <stop offset=".5618" stop-color="#0866FF" stop-opacity="0"></stop>
+                              <stop offset="1" stop-color="#0866FF" stop-opacity=".1"></stop>
+                            </radialGradient>
+                            <radialGradient id="fbL2c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5257 10.9237) scale(10.1818)">
+                              <stop offset=".3143" stop-color="#02ADFC"></stop>
+                              <stop offset="1" stop-color="#02ADFC" stop-opacity="0"></stop>
+                            </radialGradient>
+                            <linearGradient id="fbL2a" x1="2.3989" y1="2.3999" x2="13.5983" y2="13.5993" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#02ADFC"></stop>
+                              <stop offset=".5" stop-color="#0866FF"></stop>
+                              <stop offset="1" stop-color="#2B7EFF"></stop>
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex gap-2 items-start">
+            <img src="img/olivia.jpg" alt="Olivia Moore" width="40" height="40" loading="lazy" class="shrink-0 w-10 h-10 rounded-full object-cover">
+            <div class="flex-1 min-w-0">
+              <div class="inline-block max-w-full">
+                <div class="bg-[#F0F2F5] rounded-2xl px-3 py-2">
+                  <div class="text-[13px] font-semibold text-[#050505] leading-tight">Olivia Moore</div>
+                  <p class="text-[15px] text-[#050505] mt-0.5 leading-[1.3333] whitespace-pre-wrap break-words">I agree with the doctor. I was tired of so many lies we see around here. What he says is the absolute truth, and I'm proof that it works. My pain really went down. Thank you so much, doctor.</p>
+                </div>
+              </div>
+              <div class="text-[13px] mt-1.5 ml-3 flex items-center justify-between text-[#65676B]">
+                <div class="flex items-center gap-4">
+                  <button type="button" class="font-semibold hover:underline">Like</button>
+                  <span class="font-semibold">Reply</span><span>11 m</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="text-[13px] text-[#65676B]">11</span>
+                  <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1a)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1b)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1c)" fill-opacity=".5"></path>
+                    <path d="M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z" fill="#fff"></path>
+                    <defs>
+                      <radialGradient id="fbL1b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 .0005 8) scale(7.99958)">
+                        <stop offset=".5618" stop-color="#0866FF" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#0866FF" stop-opacity=".1"></stop>
+                      </radialGradient>
+                      <radialGradient id="fbL1c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5257 10.9237) scale(10.1818)">
+                        <stop offset=".3143" stop-color="#02ADFC"></stop>
+                        <stop offset="1" stop-color="#02ADFC" stop-opacity="0"></stop>
+                      </radialGradient>
+                      <linearGradient id="fbL1a" x1="2.3989" y1="2.3999" x2="13.5983" y2="13.5993" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#02ADFC"></stop>
+                        <stop offset=".5" stop-color="#0866FF"></stop>
+                        <stop offset="1" stop-color="#2B7EFF"></stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex gap-2 items-start">
+            <img src="img/richard.jpg" alt="Richard Shutter" width="40" height="40" loading="lazy" class="shrink-0 w-10 h-10 rounded-full object-cover">
+            <div class="flex-1 min-w-0">
+              <div class="inline-block max-w-full">
+                <div class="bg-[#F0F2F5] rounded-2xl px-3 py-2">
+                  <div class="text-[13px] font-semibold text-[#050505] leading-tight">Richard Shutter</div>
+                  <p class="text-[15px] text-[#050505] mt-0.5 leading-[1.3333] whitespace-pre-wrap break-words">Jesus! How can they hide this from us? I looked up everything the doctor said and it's all there… all true</p>
+                </div>
+              </div>
+              <div class="text-[13px] mt-1.5 ml-3 flex items-center justify-between text-[#65676B]">
+                <div class="flex items-center gap-4">
+                  <button type="button" class="font-semibold hover:underline">Like</button>
+                  <span class="font-semibold">Reply</span><span>16 m</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="text-[13px] text-[#65676B]">21</span>
+                  <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1a)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1b)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1c)" fill-opacity=".5"></path>
+                    <path d="M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z" fill="#fff"></path>
+                    <defs>
+                      <radialGradient id="fbL1b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 .0005 8) scale(7.99958)">
+                        <stop offset=".5618" stop-color="#0866FF" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#0866FF" stop-opacity=".1"></stop>
+                      </radialGradient>
+                      <radialGradient id="fbL1c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5257 10.9237) scale(10.1818)">
+                        <stop offset=".3143" stop-color="#02ADFC"></stop>
+                        <stop offset="1" stop-color="#02ADFC" stop-opacity="0"></stop>
+                      </radialGradient>
+                      <linearGradient id="fbL1a" x1="2.3989" y1="2.3999" x2="13.5983" y2="13.5993" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#02ADFC"></stop>
+                        <stop offset=".5" stop-color="#0866FF"></stop>
+                        <stop offset="1" stop-color="#2B7EFF"></stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+              <div class="mt-2 space-y-2">
+                <div class="flex gap-2 items-start">
+                  <img src="img/emily.jpg" alt="Emily Johnson" width="32" height="32" loading="lazy" class="shrink-0 w-8 h-8 rounded-full object-cover">
+                  <div class="flex-1 min-w-0">
+                    <div class="inline-block max-w-full">
+                      <div class="bg-[#F0F2F5] rounded-2xl px-3 py-2">
+                        <div class="text-[13px] font-semibold text-[#050505] leading-tight">Emily Johnson</div>
+                        <p class="text-[15px] text-[#050505] mt-0.5 leading-[1.3333] whitespace-pre-wrap break-words">Exactly, that shocked me! I already showed this to my friend who has the same problem as well.</p>
+                      </div>
+                    </div>
+                    <div class="text-[13px] mt-1.5 ml-3 flex items-center justify-between text-[#65676B]">
+                      <div class="flex items-center gap-4">
+                        <button type="button" class="font-semibold hover:underline">Like</button>
+                        <span class="font-semibold">Reply</span><span>1 h</span>
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <span class="text-[13px] text-[#65676B]">6</span>
+                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                          <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL2a)"></path>
+                          <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL2b)"></path>
+                          <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL2c)" fill-opacity=".5"></path>
+                          <path d="M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z" fill="#fff"></path>
+                          <defs>
+                            <radialGradient id="fbL2b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 .0005 8) scale(7.99958)">
+                              <stop offset=".5618" stop-color="#0866FF" stop-opacity="0"></stop>
+                              <stop offset="1" stop-color="#0866FF" stop-opacity=".1"></stop>
+                            </radialGradient>
+                            <radialGradient id="fbL2c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5257 10.9237) scale(10.1818)">
+                              <stop offset=".3143" stop-color="#02ADFC"></stop>
+                              <stop offset="1" stop-color="#02ADFC" stop-opacity="0"></stop>
+                            </radialGradient>
+                            <linearGradient id="fbL2a" x1="2.3989" y1="2.3999" x2="13.5983" y2="13.5993" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#02ADFC"></stop>
+                              <stop offset=".5" stop-color="#0866FF"></stop>
+                              <stop offset="1" stop-color="#2B7EFF"></stop>
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-2 items-start">
+                  <img src="img/brenda.jpg" alt="Brenda Vreeland" width="32" height="32" loading="lazy" class="shrink-0 w-8 h-8 rounded-full object-cover">
+                  <div class="flex-1 min-w-0">
+                    <div class="inline-block max-w-full">
+                      <div class="bg-[#F0F2F5] rounded-2xl px-3 py-2">
+                        <div class="text-[13px] font-semibold text-[#050505] leading-tight">Brenda Vreeland</div>
+                        <p class="text-[15px] text-[#050505] mt-0.5 leading-[1.3333] whitespace-pre-wrap break-words">This doctor deserves an award! I did what he says and guess what? My pain dropped A LOT! I don't need any more medication! I'm free 🥰</p>
+                      </div>
+                    </div>
+                    <div class="text-[13px] mt-1.5 ml-3 flex items-center justify-between text-[#65676B]">
+                      <div class="flex items-center gap-4">
+                        <button type="button" class="font-semibold hover:underline">Like</button>
+                        <span class="font-semibold">Reply</span><span>1 h</span>
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <span class="text-[13px] text-[#65676B]">16</span>
+                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                          <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL2a)"></path>
+                          <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL2b)"></path>
+                          <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL2c)" fill-opacity=".5"></path>
+                          <path d="M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z" fill="#fff"></path>
+                          <defs>
+                            <radialGradient id="fbL2b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 .0005 8) scale(7.99958)">
+                              <stop offset=".5618" stop-color="#0866FF" stop-opacity="0"></stop>
+                              <stop offset="1" stop-color="#0866FF" stop-opacity=".1"></stop>
+                            </radialGradient>
+                            <radialGradient id="fbL2c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5257 10.9237) scale(10.1818)">
+                              <stop offset=".3143" stop-color="#02ADFC"></stop>
+                              <stop offset="1" stop-color="#02ADFC" stop-opacity="0"></stop>
+                            </radialGradient>
+                            <linearGradient id="fbL2a" x1="2.3989" y1="2.3999" x2="13.5983" y2="13.5993" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#02ADFC"></stop>
+                              <stop offset=".5" stop-color="#0866FF"></stop>
+                              <stop offset="1" stop-color="#2B7EFF"></stop>
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex gap-2 items-start">
+            <img src="img/jessica.jpg" alt="Jessica Brown" width="40" height="40" loading="lazy" class="shrink-0 w-10 h-10 rounded-full object-cover">
+            <div class="flex-1 min-w-0">
+              <div class="inline-block max-w-full">
+                <div class="bg-[#F0F2F5] rounded-2xl px-3 py-2">
+                  <div class="text-[13px] font-semibold text-[#050505] leading-tight">Jessica Brown</div>
+                  <p class="text-[15px] text-[#050505] mt-0.5 leading-[1.3333] whitespace-pre-wrap break-words">Thank you, Dr, for changing my life in just a few weeks. I'm so grateful for what you've done, it feels like a miracle.</p>
+                </div>
+              </div>
+              <div class="text-[13px] mt-1.5 ml-3 flex items-center justify-between text-[#65676B]">
+                <div class="flex items-center gap-4">
+                  <button type="button" class="font-semibold hover:underline">Like</button>
+                  <span class="font-semibold">Reply</span><span>13 m</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="text-[13px] text-[#65676B]">18</span>
+                  <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1a)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1b)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1c)" fill-opacity=".5"></path>
+                    <path d="M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z" fill="#fff"></path>
+                    <defs>
+                      <radialGradient id="fbL1b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 .0005 8) scale(7.99958)">
+                        <stop offset=".5618" stop-color="#0866FF" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#0866FF" stop-opacity=".1"></stop>
+                      </radialGradient>
+                      <radialGradient id="fbL1c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5257 10.9237) scale(10.1818)">
+                        <stop offset=".3143" stop-color="#02ADFC"></stop>
+                        <stop offset="1" stop-color="#02ADFC" stop-opacity="0"></stop>
+                      </radialGradient>
+                      <linearGradient id="fbL1a" x1="2.3989" y1="2.3999" x2="13.5983" y2="13.5993" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#02ADFC"></stop>
+                        <stop offset=".5" stop-color="#0866FF"></stop>
+                        <stop offset="1" stop-color="#2B7EFF"></stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex gap-2 items-start">
+            <img src="img/ashley.jpg" alt="Ashley Davis" width="40" height="40" loading="lazy" class="shrink-0 w-10 h-10 rounded-full object-cover">
+            <div class="flex-1 min-w-0">
+              <div class="inline-block max-w-full">
+                <div class="bg-[#F0F2F5] rounded-2xl px-3 py-2">
+                  <div class="text-[13px] font-semibold text-[#050505] leading-tight">Ashley Davis</div>
+                  <p class="text-[15px] text-[#050505] mt-0.5 leading-[1.3333] whitespace-pre-wrap break-words">I don't know… this might be a scam. What if I waste my time and it doesn't work?</p>
+                </div>
+              </div>
+              <div class="text-[13px] mt-1.5 ml-3 flex items-center justify-between text-[#65676B]">
+                <div class="flex items-center gap-4">
+                  <button type="button" class="font-semibold hover:underline">Like</button>
+                  <span class="font-semibold">Reply</span><span>26 m</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="text-[13px] text-[#65676B]">5</span>
+                  <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1a)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1b)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1c)" fill-opacity=".5"></path>
+                    <path d="M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z" fill="#fff"></path>
+                    <defs>
+                      <radialGradient id="fbL1b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 .0005 8) scale(7.99958)">
+                        <stop offset=".5618" stop-color="#0866FF" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#0866FF" stop-opacity=".1"></stop>
+                      </radialGradient>
+                      <radialGradient id="fbL1c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5257 10.9237) scale(10.1818)">
+                        <stop offset=".3143" stop-color="#02ADFC"></stop>
+                        <stop offset="1" stop-color="#02ADFC" stop-opacity="0"></stop>
+                      </radialGradient>
+                      <linearGradient id="fbL1a" x1="2.3989" y1="2.3999" x2="13.5983" y2="13.5993" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#02ADFC"></stop>
+                        <stop offset=".5" stop-color="#0866FF"></stop>
+                        <stop offset="1" stop-color="#2B7EFF"></stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+              <div class="mt-2 space-y-2">
+                <div class="flex gap-2 items-start">
+                  <img src="img/jessi.jpg" alt="Jessi Anderson" width="32" height="32" loading="lazy" class="shrink-0 w-8 h-8 rounded-full object-cover">
+                  <div class="flex-1 min-w-0">
+                    <div class="inline-block max-w-full">
+                      <div class="bg-[#F0F2F5] rounded-2xl px-3 py-2">
+                        <div class="text-[13px] font-semibold text-[#050505] leading-tight">Jessi Anderson</div>
+                        <p class="text-[15px] text-[#050505] mt-0.5 leading-[1.3333] whitespace-pre-wrap break-words">It's not a scam at all. I was skeptical too, but after a few weeks I really improved. Give it a fair try.</p>
+                      </div>
+                    </div>
+                    <div class="text-[13px] mt-1.5 ml-3 flex items-center justify-between text-[#65676B]">
+                      <div class="flex items-center gap-4">
+                        <button type="button" class="font-semibold hover:underline">Like</button>
+                        <span class="font-semibold">Reply</span><span>20 m</span>
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <span class="text-[13px] text-[#65676B]">12</span>
+                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                          <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL2a)"></path>
+                          <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL2b)"></path>
+                          <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL2c)" fill-opacity=".5"></path>
+                          <path d="M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z" fill="#fff"></path>
+                          <defs>
+                            <radialGradient id="fbL2b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 .0005 8) scale(7.99958)">
+                              <stop offset=".5618" stop-color="#0866FF" stop-opacity="0"></stop>
+                              <stop offset="1" stop-color="#0866FF" stop-opacity=".1"></stop>
+                            </radialGradient>
+                            <radialGradient id="fbL2c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5257 10.9237) scale(10.1818)">
+                              <stop offset=".3143" stop-color="#02ADFC"></stop>
+                              <stop offset="1" stop-color="#02ADFC" stop-opacity="0"></stop>
+                            </radialGradient>
+                            <linearGradient id="fbL2a" x1="2.3989" y1="2.3999" x2="13.5983" y2="13.5993" gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#02ADFC"></stop>
+                              <stop offset=".5" stop-color="#0866FF"></stop>
+                              <stop offset="1" stop-color="#2B7EFF"></stop>
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex gap-2 items-start">
+            <img src="img/robert_hayes.jpg" alt="Robert Hayes" width="40" height="40" loading="lazy" class="shrink-0 w-10 h-10 rounded-full object-cover">
+            <div class="flex-1 min-w-0">
+              <div class="inline-block max-w-full">
+                <div class="bg-[#F0F2F5] rounded-2xl px-3 py-2">
+                  <div class="text-[13px] font-semibold text-[#050505] leading-tight">Robert Hayes</div>
+                  <p class="text-[15px] text-[#050505] mt-0.5 leading-[1.3333] whitespace-pre-wrap break-words">My symptoms went from constant to barely noticeable in two months. My doctor asked what I was doing differently — this is what I was doing.</p>
+                </div>
+              </div>
+              <div class="text-[13px] mt-1.5 ml-3 flex items-center justify-between text-[#65676B]">
+                <div class="flex items-center gap-4">
+                  <button type="button" class="font-semibold hover:underline">Like</button>
+                  <span class="font-semibold">Reply</span><span>34 m</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="text-[13px] text-[#65676B]">14</span>
+                  <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1a)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1b)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1c)" fill-opacity=".5"></path>
+                    <path d="M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z" fill="#fff"></path>
+                    <defs>
+                      <radialGradient id="fbL1b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 .0005 8) scale(7.99958)">
+                        <stop offset=".5618" stop-color="#0866FF" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#0866FF" stop-opacity=".1"></stop>
+                      </radialGradient>
+                      <radialGradient id="fbL1c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5257 10.9237) scale(10.1818)">
+                        <stop offset=".3143" stop-color="#02ADFC"></stop>
+                        <stop offset="1" stop-color="#02ADFC" stop-opacity="0"></stop>
+                      </radialGradient>
+                      <linearGradient id="fbL1a" x1="2.3989" y1="2.3999" x2="13.5983" y2="13.5993" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#02ADFC"></stop>
+                        <stop offset=".5" stop-color="#0866FF"></stop>
+                        <stop offset="1" stop-color="#2B7EFF"></stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex gap-2 items-start">
+            <img src="img/linda_carter.jpg" alt="Linda Carter" width="40" height="40" loading="lazy" class="shrink-0 w-10 h-10 rounded-full object-cover">
+            <div class="flex-1 min-w-0">
+              <div class="inline-block max-w-full">
+                <div class="bg-[#F0F2F5] rounded-2xl px-3 py-2">
+                  <div class="text-[13px] font-semibold text-[#050505] leading-tight">Linda Carter</div>
+                  <p class="text-[15px] text-[#050505] mt-0.5 leading-[1.3333] whitespace-pre-wrap break-words">I've shared this video with my whole family. This runs on both sides and everyone needs to see this. Thank you doctor!</p>
+                </div>
+              </div>
+              <div class="text-[13px] mt-1.5 ml-3 flex items-center justify-between text-[#65676B]">
+                <div class="flex items-center gap-4">
+                  <button type="button" class="font-semibold hover:underline">Like</button>
+                  <span class="font-semibold">Reply</span><span>42 m</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="text-[13px] text-[#65676B]">23</span>
+                  <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1a)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1b)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1c)" fill-opacity=".5"></path>
+                    <path d="M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z" fill="#fff"></path>
+                    <defs>
+                      <radialGradient id="fbL1b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 .0005 8) scale(7.99958)">
+                        <stop offset=".5618" stop-color="#0866FF" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#0866FF" stop-opacity=".1"></stop>
+                      </radialGradient>
+                      <radialGradient id="fbL1c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5257 10.9237) scale(10.1818)">
+                        <stop offset=".3143" stop-color="#02ADFC"></stop>
+                        <stop offset="1" stop-color="#02ADFC" stop-opacity="0"></stop>
+                      </radialGradient>
+                      <linearGradient id="fbL1a" x1="2.3989" y1="2.3999" x2="13.5983" y2="13.5993" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#02ADFC"></stop>
+                        <stop offset=".5" stop-color="#0866FF"></stop>
+                        <stop offset="1" stop-color="#2B7EFF"></stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex gap-2 items-start">
+            <img src="img/michael_brooks.jpg" alt="Michael Brooks" width="40" height="40" loading="lazy" class="shrink-0 w-10 h-10 rounded-full object-cover">
+            <div class="flex-1 min-w-0">
+              <div class="inline-block max-w-full">
+                <div class="bg-[#F0F2F5] rounded-2xl px-3 py-2">
+                  <div class="text-[13px] font-semibold text-[#050505] leading-tight">Michael Brooks</div>
+                  <p class="text-[15px] text-[#050505] mt-0.5 leading-[1.3333] whitespace-pre-wrap break-words">Energy is back, discomfort is down, sleeping through the night. Wish I had found this years ago.</p>
+                </div>
+              </div>
+              <div class="text-[13px] mt-1.5 ml-3 flex items-center justify-between text-[#65676B]">
+                <div class="flex items-center gap-4">
+                  <button type="button" class="font-semibold hover:underline">Like</button>
+                  <span class="font-semibold">Reply</span><span>1 h</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="text-[13px] text-[#65676B]">9</span>
+                  <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1a)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1b)"></path>
+                    <path d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z" fill="url(#fbL1c)" fill-opacity=".5"></path>
+                    <path d="M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z" fill="#fff"></path>
+                    <defs>
+                      <radialGradient id="fbL1b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 .0005 8) scale(7.99958)">
+                        <stop offset=".5618" stop-color="#0866FF" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#0866FF" stop-opacity=".1"></stop>
+                      </radialGradient>
+                      <radialGradient id="fbL1c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45 -4.5257 10.9237) scale(10.1818)">
+                        <stop offset=".3143" stop-color="#02ADFC"></stop>
+                        <stop offset="1" stop-color="#02ADFC" stop-opacity="0"></stop>
+                      </radialGradient>
+                      <linearGradient id="fbL1a" x1="2.3989" y1="2.3999" x2="13.5983" y2="13.5993" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#02ADFC"></stop>
+                        <stop offset=".5" stop-color="#0866FF"></stop>
+                        <stop offset="1" stop-color="#2B7EFF"></stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 All Rights Reserved.
+  </footer>
+
+  <script>
+    // Dynamic date
+    document.addEventListener("DOMContentLoaded", function() {
+      const dateElem = document.getElementById("dynamic-date");
+      const now = new Date();
+      dateElem.textContent = now.toLocaleDateString(navigator.language, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    });
+
+    // People watching random walk
+    (function() {
+      let count = 927;
+      const min = 897;
+      const countElem = document.getElementById("watching-count");
+
+      function updateCount() {
+        const upChance = Math.random();
+        if (upChance < 0.65) {
+          count += Math.floor(Math.random() * 8) + 1; // +1 to +8
+        } else {
+          count -= Math.floor(Math.random() * 3) + 1; // -1 to -3
+        }
+        if (count < min) count = min;
+        countElem.textContent = count;
+
+        const delay = Math.floor(Math.random() * 2000) + 1800; // 1800–3800ms
+        setTimeout(updateCount, delay);
+      }
+
+      updateCount();
+    })();
+  </script>
+  
+	<style>
+	  .hide {
+		display: none;
+	  }
+	</style>
+
+<script>
+  var listPitch = {
+    '6a3ac499c118d7ac42d3ea38': { delay: 2738, utm: 'utm_vsl=vsl1_L1' }
+  };
+
+  var alreadyInitialized = false;
+
+  var updateLinksWithUTM = function(utmParam) {
+    var links = document.querySelectorAll('a[href]:not([href*="#"])');
+    var parts = String(utmParam).split('=');
+    var key = parts[0];
+    var value = parts.slice(1).join('=');
+    for (var i = 0; i < links.length; i++) {
+      var link = links[i];
+      try {
+        var url = new URL(link.href, window.location.href);
+        if (url.searchParams.has(key)) continue;
+        url.searchParams.append(key, value);
+        link.href = url.toString();
+      } catch (e) {
+        var sep = link.href.indexOf('?') === -1 ? '?' : '&';
+        if (link.href.indexOf(utmParam) === -1) {
+          link.href = link.href + sep + utmParam;
+        }
+      }
+    }
+  };
+
+  document.addEventListener('player:ready', function(event) {
+    if (alreadyInitialized) return;
+
+    var detail = event.detail || {};
+    var config = detail.config || {};
+    var player = detail.player || document.querySelector('vturb-smartplayer');
+    var playerId = config.id;
+    var pitchConfig = listPitch[playerId];
+
+    if (!playerId || !pitchConfig) return;
+
+    alreadyInitialized = true;
+
+    player.displayHiddenElements(pitchConfig.delay, ['.hide'], { persist: true });
+    updateLinksWithUTM(pitchConfig.utm);
+  });
+</script>
+
+</body>
+</html>
